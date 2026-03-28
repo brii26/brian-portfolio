@@ -30,7 +30,7 @@ const DEFAULT_DISTANCE = 100
 const BASE_SIZE = 40
 const BASE_ICON_SIZE = 20
 const ICON_SIZE_RATIO = 0.5
-const SPRING = { mass: 0.1, stiffness: 150, damping: 12 }
+const SPRING = { mass: 0.1, stiffness: 170, damping: 14 }
 
 interface DockContextValue {
   mouseX: MotionValue<number>
@@ -110,7 +110,7 @@ const DockIcon = forwardRef<HTMLDivElement, DockIconProps>(
         {...props}
         style={{ width: containerSize, height: containerSize }}
         className={cn(
-          'relative flex aspect-square items-center justify-center rounded-full shrink-0',
+          'relative flex aspect-square items-center justify-center rounded-full shrink-0 will-change-transform',
           className,
         )}
       >

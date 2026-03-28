@@ -63,7 +63,7 @@ export function Navbar() {
         {/* Github */}
         <Tooltip>
           <TooltipTrigger>
-            <a href="https://github.com/brii26" target='_blank'>
+            <a href="https://github.com/brii26" target="_blank">
               <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                 <Icons.gitHub className="size-full" />
               </DockIcon>
@@ -82,7 +82,7 @@ export function Navbar() {
         {/* Linkedin */}
         <Tooltip>
           <TooltipTrigger>
-            <a href="https://www.linkedin.com/in/brianrt2/" target='_blank'>
+            <a href="https://www.linkedin.com/in/brianrt2/" target="_blank">
               <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                 <Icons.linkedin className="size-full" />
               </DockIcon>
