@@ -35,7 +35,7 @@ export default function Home() {
                   src={'/me.png'}
                   className="object-cover"
                 />
-                <AvatarFallback>{'DATA.initials'}</AvatarFallback>
+                <AvatarFallback>Foto</AvatarFallback>
               </Avatar>
             </BlurFade>
           </div>
@@ -60,7 +60,7 @@ export default function Home() {
                     <div className="text-xs">
                       <Markdown>
                         3rd-year Computer Science student at Bandung Institute
-                        of Technology. Focusing on Software Systems Engineering
+                        of Technology. Focusing on Software System Engineering
                         and AI.
                       </Markdown>
                     </div>
@@ -110,11 +110,13 @@ export default function Home() {
               </div>
             </div>
 
-			<div className="flex justify-center mt-8">
-				<a href='/'>
-					<ShimmerButton className="w-48px h-10">On Development...</ShimmerButton>
-				</a>
-			</div>
+            <div className="flex justify-center mt-8">
+              <a href="/">
+                <ShimmerButton className="w-48px h-10">
+                  On Development...
+                </ShimmerButton>
+              </a>
+            </div>
           </BlurFade>
         </div>
       </section>

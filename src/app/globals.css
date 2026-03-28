@@ -10,7 +10,9 @@
   cursor: default !important;
 }
 
-a, button, [role="button"] {
+a,
+button,
+[role='button'] {
   cursor: pointer !important;
 }
 
