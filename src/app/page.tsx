@@ -3,10 +3,42 @@ import BlurFade from '@/components/magicui/blur-fade'
 import BlurFadeText from '@/components/magicui/blur-fade-text'
 import Markdown from 'react-markdown'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { ShimmerButton } from '@/components/magicui/shimmer-button'
 import TiltedCard from '@/components/TiltedCard'
+import ResumeCard from '@/components/ResumeCard'
+import WorkCard from '@/components/WorkCard'
 
 const BLUR_FADE_DELAY = 0.04
+
+const WORK = [
+  {
+    company: "Institut Teknologi Bandung",
+    role: "Computational Thinking Lab Assistant",
+    start: "Oct 2024",
+    end: "Dec 2024",
+    logoUrl: "/itb-logo.png",
+    bullets: [
+      "Supervised bi-weekly Python-based labs for 60+ students, overseeing the implementation of 3 distinct problem sets while providing on-site technical guidance.",
+      "Evaluated student submissions and provided actionable feedback on algorithmic logic, code efficiency, and best practices.",
+    ],
+  },
+]
+
+const EDUCATION = [
+  {
+    company: "Institut Teknologi Bandung",
+    role: "Bachelor's Degree of Computer Science",
+    start: "Aug 2023",
+    end: "Present",
+    logoUrl: "/itb-logo.png",
+  },
+  {
+    company: "SMAK 1 Penabur Jakarta",
+    role: "High School",
+    start: "Jul 2020",
+    end: "Apr 2023",
+    logoUrl: "/penabur-logo.png",
+  },
+]
 
 export default function Home() {
   return (
@@ -24,7 +56,7 @@ export default function Home() {
               <BlurFadeText
                 className="text-muted-foreground max-w-150 md:text-lg lg:text-xl"
                 delay={BLUR_FADE_DELAY}
-                text="Informatics Engineering Student, Passionate about software engineering and currently exploring AI and automation."
+                text="Penultimate-year CS student passionate about backend engineering, cloud infrastructure, and building systems that are scalable and resilient in production."
               />
             </div>
             {/* Profile Picture */}
@@ -54,27 +86,27 @@ export default function Home() {
                 <div className="flex vertical-align justify-center gap-4 mb-3">
                   <TiltedCard
                     className="w-full h-full"
-                    title="Informatics Engineering @ ITB"
+                    title="Computer Science @ ITB"
                     glowColor="bg-black dark:bg-white"
                   >
                     <div className="text-xs">
                       <Markdown>
                         3rd-year Computer Science student at Bandung Institute
-                        of Technology. Focusing on Software System Engineering
-                        and AI.
+                        of Technology. Focusing on Software System Engineering.
                       </Markdown>
                     </div>
                   </TiltedCard>
                   <TiltedCard
                     className="w-full h-full"
-                    title="AI & Software Enthusiast"
+                    title="Software & Cloud"
                     glowColor="bg-black dark:bg-white"
                   >
                     <div className="text-xs">
                       <Markdown>
-                        Driven by curiosity, I’m constantly exploring software
-                        systems, automation tools, and AI architectures to build
-                        smarter and more efficient solutions.
+                        Focused on backend development and cloud-native
+                        technologies. Interested in how systems are designed
+                        to be resilient, maintainable, and scalable in
+                        production.
                       </Markdown>
                     </div>
                   </TiltedCard>
@@ -110,18 +142,45 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex justify-center mt-8">
-              <a href="/">
-                <ShimmerButton className="w-48px h-10">
-                  On Development...
-                </ShimmerButton>
-              </a>
-            </div>
           </BlurFade>
         </div>
       </section>
 
+      {/* Work Experience */}
+      <section id="work">
+        <div className="mx-auto w-full max-w-2xl">
+          <BlurFade delay={BLUR_FADE_DELAY * 5}>
+            <h2 className="text-xl font-bold mb-6">Work Experience</h2>
+          </BlurFade>
+          <div className="flex flex-col">
+            {WORK.map((item, index) => (
+              <BlurFade key={item.company + index} delay={BLUR_FADE_DELAY * 6 + index * 0.05}>
+                <WorkCard {...item} isLast={index === WORK.length - 1} />
+              </BlurFade>
+
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Education */}
+      <section id="education">
+        <div className="mx-auto w-full max-w-2xl">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className="text-xl font-bold mb-6">Education</h2>
+          </BlurFade>
+          <div className="flex flex-col">
+            {EDUCATION.map((item, index) => (
+              <BlurFade key={item.company + index} delay={BLUR_FADE_DELAY * 8 + index * 0.05}>
+                <ResumeCard {...item} isLast={index === EDUCATION.length - 1} />
+              </BlurFade>
+
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education old */}
       {/* <section id="education">
         <div className="flex min-h-0 flex-col gap-y-6">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
