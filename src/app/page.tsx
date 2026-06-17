@@ -17,7 +17,7 @@ const WORK = [
     end: "Dec 2024",
     logoUrl: "/itb-logo.png",
     bullets: [
-      "Supervised bi-weekly Python-based labs for 60+ students, overseeing the implementation of 3 distinct problem sets while providing on-site technical guidance.",
+      "Supervised bi-weekly Python-based labs for 60+ students, overseeing the implementation of 3 algorithmic problem sets while providing on-site technical guidance.",
       "Evaluated student submissions and provided actionable feedback on algorithmic logic, code efficiency, and best practices.",
     ],
   },
@@ -33,7 +33,7 @@ const EDUCATION = [
   },
   {
     company: "SMAK 1 Penabur Jakarta",
-    role: "High School",
+    role: "High School, Natural Science",
     start: "Jul 2020",
     end: "Apr 2023",
     logoUrl: "/penabur-logo.png",
@@ -114,14 +114,14 @@ export default function Home() {
                 <div className="flex vertical-align justify-center gap-4">
                   <TiltedCard
                     className="w-full h-full"
-                    title="Hobbies"
+                    title="Currently Learning"
                     glowColor="bg-black dark:bg-white"
                   >
                     <div className="text-xs">
                       <Markdown>
-                        Resetting after a long day of coding with workouts and
-                        night runs. A simple way to stay disciplined and keep
-                        the mind clear.
+                        Diving deeper into cloud infrastructure, specifically
+                        AWS. Exploring how to design and deploy systems that
+                        scale reliably in the cloud.
                       </Markdown>
                     </div>
                   </TiltedCard>
