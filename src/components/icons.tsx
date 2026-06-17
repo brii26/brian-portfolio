@@ -65,6 +65,29 @@ export const Icons = {
       />
     </svg>
   ),
+  certifications: (props: IconProps) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <circle
+        cx="12"
+        cy="9"
+        r="6"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M8.5 13.5L7 21L12 18.5L17 21L15.5 13.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
   toggle_mode: ({ className }: { className?: string }) => (
     <ModeToggle className={className} />
   ),

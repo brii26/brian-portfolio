@@ -41,6 +41,25 @@ export function Navbar() {
           className="h-2/3 m-auto w-px bg-border"
         />
 
+        {/* Certifications */}
+        <Tooltip>
+          <TooltipTrigger>
+            <a href="/" target={undefined}>
+              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+                <Icons.certifications className="size-full" />
+              </DockIcon>
+            </a>
+          </TooltipTrigger>
+          <TooltipContent
+            side="top"
+            sideOffset={8}
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+          >
+            <p>Certifications</p>
+            <TooltipArrow className="fill-primary" />
+          </TooltipContent>
+        </Tooltip>
+
         {/* Projects */}
         <Tooltip>
           <TooltipTrigger>
