@@ -46,7 +46,24 @@ export default function ProjectsSection() {
   return (
     <div className="mx-auto w-full max-w-2xl">
       <BlurFade delay={BLUR_FADE_DELAY * 9}>
-        <h2 className="text-xl font-bold mb-6">Projects</h2>
+        <div className="flex flex-col items-center gap-3 mb-8">
+          <div className="flex items-center w-full">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+            <div className="relative mx-3 flex items-center gap-2 rounded-full border border-border bg-gradient-to-b from-muted/80 to-background px-4 py-1.5 shadow-sm ring-1 ring-border/30">
+              <span className="size-1.5 rounded-full bg-black dark:bg-white animate-pulse" />
+              <span className="text-foreground text-xs font-semibold uppercase tracking-wider">
+                Projects
+              </span>
+            </div>
+            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-border to-transparent" />
+          </div>
+          <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-center">
+            Projects I&apos;ve built
+          </h3>
+          <p className="text-sm text-muted-foreground text-center">
+            A few things I&apos;ve worked on.
+          </p>
+        </div>
       </BlurFade>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {PROJECTS.map((project, pi) => (
@@ -58,10 +75,14 @@ export default function ProjectsSection() {
               className="group flex flex-col h-full border border-border rounded-xl overflow-hidden bg-background hover:ring-2 hover:ring-muted transition-all duration-200"
             >
               {/* gradient thumbnail */}
-              <div className={`h-32 w-full bg-gradient-to-br ${project.gradient}`} />
+              <div className="h-52 w-full overflow-hidden">
+                <div
+                  className={`h-full w-full bg-gradient-to-br ${project.gradient} transition-transform duration-700 ease-out group-hover:scale-[1.3]`}
+                />
+              </div>
 
               {/* card body */}
-              <div className="flex flex-col gap-2 p-4 flex-1">
+              <div className="flex flex-col gap-1.5 p-3.5 flex-1">
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex flex-col gap-0.5">
                     <h3 className="font-semibold leading-none">{project.title}</h3>

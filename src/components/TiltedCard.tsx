@@ -14,7 +14,6 @@ export default function TiltedCard({
   children,
   className,
   title,
-  glowColor = 'bg-green-400',
   imageSrc,
   altText = 'Tilted card image',
 
@@ -108,13 +107,7 @@ export default function TiltedCard({
         {/* Title label */}
         {title && (
           <div className="flex justify-start mb-2">
-            <span className="bg-gray-500/20 text-foreground text-[11px] font-medium px-3 py-0.5 rounded-full flex items-center gap-1.5">
-              <span
-                className={cn(
-                  'size-[6px] rounded-full animate-pulse',
-                  glowColor,
-                )}
-              />
+            <span className="bg-gray-500/20 text-foreground text-[11px] font-medium px-3 py-0.5 rounded-full flex items-center">
               {title}
             </span>
           </div>
