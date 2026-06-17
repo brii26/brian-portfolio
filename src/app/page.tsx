@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import TiltedCard from '@/components/TiltedCard'
 import ResumeCard from '@/components/ResumeCard'
 import WorkCard from '@/components/WorkCard'
+import SkillsSection from '@/components/SkillsSection'
 
 const BLUR_FADE_DELAY = 0.04
 
@@ -178,6 +179,11 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Skills */}
+      <section id="skills">
+        <SkillsSection />
       </section>
 
       {/* Education old */}
