@@ -40,6 +40,33 @@ const PROJECTS: Project[] = [
     href: "https://github.com/brii26",
     gradient: "from-orange-500/30 to-rose-500/30",
   },
+  {
+    title: "Portfolio Website",
+    dates: "2025",
+    description:
+      "This site, built with Next.js and Tailwind CSS, focused on clean design and strong SEO.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    href: "https://github.com/brii26",
+    gradient: "from-violet-500/30 to-fuchsia-500/30",
+  },
+  {
+    title: "Project Five",
+    dates: "2025",
+    description:
+      "A short description of what this project does and the problem it solves.",
+    tags: ["Node.js", "Express"],
+    href: "https://github.com/brii26",
+    gradient: "from-cyan-500/30 to-blue-500/30",
+  },
+  {
+    title: "Project Six",
+    dates: "2025",
+    description:
+      "A short description of what this project does and the problem it solves.",
+    tags: ["Kotlin", "Jetpack Compose"],
+    href: "https://github.com/brii26",
+    gradient: "from-amber-500/30 to-yellow-500/30",
+  },
 ];
 
 export default function ProjectsSection() {
@@ -49,19 +76,19 @@ export default function ProjectsSection() {
         <div className="flex flex-col items-center gap-3 mb-8">
           <div className="flex items-center w-full">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-            <div className="relative mx-3 flex items-center gap-2 rounded-full border border-border bg-gradient-to-b from-muted/80 to-background px-4 py-1.5 shadow-sm ring-1 ring-border/30">
-              <span className="size-1.5 rounded-full bg-black dark:bg-white animate-pulse" />
-              <span className="text-foreground text-xs font-semibold uppercase tracking-wider">
-                Projects
+            <div className="relative mx-3 flex items-center rounded-full bg-primary px-4 py-1.5 shadow-[0_0_10px_0px_rgba(80,100,131,0.15)]">
+              <span className="text-background text-sm font-medium">
+                My Projects
               </span>
             </div>
             <div className="flex-1 h-px bg-gradient-to-l from-transparent via-border to-transparent" />
           </div>
-          <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-center">
+          <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mt-[3px]">
             Projects I&apos;ve built
           </h3>
-          <p className="text-sm text-muted-foreground text-center">
-            A few things I&apos;ve worked on.
+          <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
+            From machine learning and mobile apps to distributed systems and
+            complex web applications. Here are a few of my favorites.
           </p>
         </div>
       </BlurFade>
@@ -108,6 +135,20 @@ export default function ProjectsSection() {
           </BlurFade>
         ))}
       </div>
+      <BlurFade delay={BLUR_FADE_DELAY * 16}>
+        <div className="flex justify-center mt-8">
+          <a
+            href="https://github.com/brii26"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-5 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+          >
+            More projects
+            <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </div>
+        <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
+      </BlurFade>
     </div>
   );
 }
