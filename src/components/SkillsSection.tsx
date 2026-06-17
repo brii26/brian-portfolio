@@ -71,11 +71,13 @@ export default function SkillsSection() {
       <BlurFade delay={BLUR_FADE_DELAY * 9}>
         <h2 className="text-xl font-bold mb-6">Skills</h2>
       </BlurFade>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col">
         {SKILL_GROUPS.map((group, gi) => (
           <BlurFade key={group.label} delay={BLUR_FADE_DELAY * 10 + gi * 0.05}>
-            <div className="flex flex-col md:flex-row md:items-start gap-2 md:gap-4">
-              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground md:w-40 md:pt-1.5 flex-none">
+            <div
+              className={`flex flex-col md:flex-row md:items-start gap-2 md:gap-4 py-5 ${gi !== 0 ? "border-t border-border/60" : ""}`}
+            >
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground md:w-40 md:pt-1.5 flex-none">
                 {group.label}
               </span>
               <div className="flex flex-wrap gap-2">
