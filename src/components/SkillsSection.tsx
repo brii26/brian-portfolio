@@ -1,27 +1,67 @@
 import BlurFade from "@/components/magicui/blur-fade";
+import Image from "next/image";
 
 const BLUR_FADE_DELAY = 0.04;
 
-const SKILL_GROUPS = [
+// logos with black brand color, inverted in dark mode
+const INVERT = new Set(["nextjs", "vercel", "rust", "express"]);
+
+interface Skill {
+  name: string;
+  slug: string;
+}
+
+const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
   {
     label: "Languages",
-    items: ["TypeScript", "JavaScript", "Go", "Java", "Python", "PHP", "Rust", "Kotlin"],
+    items: [
+      { name: "TypeScript", slug: "typescript" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "Go", slug: "go" },
+      { name: "Java", slug: "java" },
+      { name: "Python", slug: "python" },
+      { name: "PHP", slug: "php" },
+      { name: "Rust", slug: "rust" },
+      { name: "Kotlin", slug: "kotlin" },
+    ],
   },
   {
     label: "Frontend",
-    items: ["Next.js", "React", "Tailwind CSS", "Jetpack Compose"],
+    items: [
+      { name: "Next.js", slug: "nextjs" },
+      { name: "React", slug: "react" },
+      { name: "Tailwind CSS", slug: "tailwind" },
+      { name: "Jetpack Compose", slug: "jetpackcompose" },
+    ],
   },
   {
     label: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Gin", "Spring Boot"],
+    items: [
+      { name: "Node.js", slug: "nodejs" },
+      { name: "Express", slug: "express" },
+      { name: "NestJS", slug: "nestjs" },
+      { name: "Gin", slug: "gin" },
+      { name: "Spring Boot", slug: "springboot" },
+    ],
   },
   {
     label: "Databases",
-    items: ["PostgreSQL", "Redis", "SQLite"],
+    items: [
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "Redis", slug: "redis" },
+      { name: "SQLite", slug: "sqlite" },
+    ],
   },
   {
     label: "Tools & Platforms",
-    items: ["Git", "Docker", "Nginx", "DigitalOcean", "Vercel", "Linux"],
+    items: [
+      { name: "Git", slug: "git" },
+      { name: "Docker", slug: "docker" },
+      { name: "Nginx", slug: "nginx" },
+      { name: "DigitalOcean", slug: "digitalocean" },
+      { name: "Vercel", slug: "vercel" },
+      { name: "Linux", slug: "linux" },
+    ],
   },
 ];
 
@@ -41,10 +81,17 @@ export default function SkillsSection() {
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span
-                    key={item}
-                    className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 px-3 flex items-center text-sm font-medium text-foreground"
+                    key={item.name}
+                    className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 px-3 flex items-center gap-2 text-sm font-medium text-foreground"
                   >
-                    {item}
+                    <Image
+                      src={`/skills/${item.slug}.svg`}
+                      alt={item.name}
+                      width={16}
+                      height={16}
+                      className={`size-4 ${INVERT.has(item.slug) ? "dark:invert" : ""}`}
+                    />
+                    {item.name}
                   </span>
                 ))}
               </div>
