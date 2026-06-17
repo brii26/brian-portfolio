@@ -8,6 +8,7 @@ import ResumeCard from '@/components/ResumeCard'
 import WorkCard from '@/components/WorkCard'
 import SkillsSection from '@/components/SkillsSection'
 import ProjectsSection from '@/components/ProjectsSection'
+import ContactSection from '@/components/ContactSection'
 
 const BLUR_FADE_DELAY = 0.04
 
@@ -276,11 +277,17 @@ export default function Home() {
       </section> */}
 
       {/* Contact */}
-      {/* <section id="contact">
-        <BlurFade delay={BLUR_FADE_DELAY * 16}>
-          <ContactSection />
-        </BlurFade>
-      </section> */}
+      <section id="contact">
+        <ContactSection />
+      </section>
+
+      {/* Footer */}
+      <footer className="mx-auto w-full max-w-2xl">
+        <p className="text-center text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Brian Ricardo Tamin. All rights reserved.
+        </p>
+      </footer>
+
       <Navbar />
     </main>
   )
