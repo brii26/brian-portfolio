@@ -1,5 +1,6 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { ArrowUpRight } from "lucide-react";
+import TechBadge from "@/components/TechBadge";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -84,7 +85,7 @@ export default function ProjectsSection() {
             <div className="flex-1 h-px bg-gradient-to-l from-transparent via-border to-transparent" />
           </div>
           <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mt-[3px]">
-            Projects I&apos;ve built
+Check out my latest work
           </h3>
           <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
             From machine learning and mobile apps to distributed systems and
@@ -99,7 +100,7 @@ export default function ProjectsSection() {
               href={project.href ?? "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col h-full border border-border rounded-xl overflow-hidden bg-background hover:ring-2 hover:ring-muted transition-all duration-200"
+              className="group flex flex-col h-full border border-border rounded-xl overflow-hidden bg-background hover:ring-2 hover:ring-muted hover:shadow-[0_0_54px_0px_rgba(80,100,131,0.15)] transition-all duration-200"
             >
               {/* gradient thumbnail */}
               <div className="h-52 w-full overflow-hidden">
@@ -122,12 +123,7 @@ export default function ProjectsSection() {
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
                   {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[11px] font-medium border border-border rounded-md px-2 py-0.5 text-muted-foreground"
-                    >
-                      {tag}
-                    </span>
+                    <TechBadge key={tag} name={tag} />
                   ))}
                 </div>
               </div>
