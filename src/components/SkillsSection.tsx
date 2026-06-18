@@ -9,6 +9,7 @@ const INVERT = new Set(["nextjs", "vercel", "rust", "express"]);
 interface Skill {
   name: string;
   slug: string;
+  exploring?: boolean;
 }
 
 const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
@@ -22,6 +23,8 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
       { name: "Python", slug: "python" },
       { name: "PHP", slug: "php" },
       { name: "Rust", slug: "rust" },
+      { name: "C", slug: "c" },
+      { name: "C++", slug: "cplusplus" },
       { name: "Kotlin", slug: "kotlin" },
     ],
   },
@@ -41,7 +44,7 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
       { name: "Express", slug: "express" },
       { name: "NestJS", slug: "nestjs" },
       { name: "Gin", slug: "gin" },
-      { name: "Spring Boot", slug: "springboot" },
+      { name: "Spring Boot", slug: "springboot", exploring: true },
     ],
   },
   {
@@ -53,13 +56,19 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
     ],
   },
   {
-    label: "Tools & Platforms",
+    label: "Infrastructure",
     items: [
-      { name: "Git", slug: "git" },
       { name: "Docker", slug: "docker" },
       { name: "Nginx", slug: "nginx" },
       { name: "DigitalOcean", slug: "digitalocean" },
       { name: "Vercel", slug: "vercel" },
+      { name: "AWS", slug: "aws", exploring: true },
+    ],
+  },
+  {
+    label: "Tools",
+    items: [
+      { name: "Git", slug: "git" },
       { name: "Linux", slug: "linux" },
     ],
   },
@@ -69,7 +78,10 @@ export default function SkillsSection() {
   return (
     <div className="mx-auto w-full max-w-2xl">
       <BlurFade delay={BLUR_FADE_DELAY * 9}>
-        <h2 className="text-xl font-bold mb-6">Skills</h2>
+        <h2 className="text-xl font-bold">Tech Stack</h2>
+        <p className="text-sm text-muted-foreground mt-1 mb-6">
+          Technologies I&apos;ve worked with.
+        </p>
       </BlurFade>
       <div className="flex flex-col">
         {SKILL_GROUPS.map((group, gi) => (
@@ -82,19 +94,28 @@ export default function SkillsSection() {
               </span>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <span
+                  <div
                     key={item.name}
-                    className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 px-3 flex items-center gap-2 text-sm font-medium text-foreground"
+                    className="flex flex-col items-center gap-1.5 w-16"
                   >
-                    <Image
-                      src={`/skills/${item.slug}.svg`}
-                      alt={item.name}
-                      width={16}
-                      height={16}
-                      className={`size-4 ${INVERT.has(item.slug) ? "dark:invert" : ""}`}
-                    />
-                    {item.name}
-                  </span>
+                    <div className="relative flex items-center justify-center size-[42px] rounded-[12px] border border-border transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]">
+                      <Image
+                        src={`/skills/${item.slug}.svg`}
+                        alt={item.name}
+                        width={25}
+                        height={25}
+                        className={`size-[25px] object-contain ${INVERT.has(item.slug) ? "dark:invert" : ""}`}
+                      />
+                    </div>
+                    <span className="text-[11px] font-medium text-foreground text-center leading-tight">
+                      {item.name}
+                    </span>
+                    {item.exploring && (
+                      <span className="text-[9px] font-medium uppercase tracking-wide text-amber-500 leading-none">
+                        Exploring
+                      </span>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>

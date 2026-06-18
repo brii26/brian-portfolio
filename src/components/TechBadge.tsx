@@ -9,6 +9,8 @@ const SLUG_MAP: Record<string, string> = {
   Python: "python",
   PHP: "php",
   Rust: "rust",
+  C: "c",
+  "C++": "cplusplus",
   Kotlin: "kotlin",
   "Next.js": "nextjs",
   React: "react",
@@ -29,10 +31,12 @@ const SLUG_MAP: Record<string, string> = {
   Vercel: "vercel",
   Linux: "linux",
   gRPC: "grpc",
+  "Claude API": "claude",
+  NumPy: "numpy",
 };
 
 // black logos that need inverting in dark mode
-const INVERT = new Set(["nextjs", "vercel", "rust", "express"]);
+const INVERT = new Set(["nextjs", "vercel", "rust", "express", "numpy"]);
 
 export default function TechBadge({ name }: { name: string }) {
   const slug = SLUG_MAP[name];
