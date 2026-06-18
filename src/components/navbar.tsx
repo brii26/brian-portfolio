@@ -19,8 +19,14 @@ export function Navbar() {
         {/* Home */}
         <Tooltip>
           <TooltipTrigger>
-            <a href="/" target={undefined}>
-              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault()
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+            >
+              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground/90 hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                 <Icons.home className="size-full" />
               </DockIcon>
             </a>
@@ -28,7 +34,7 @@ export function Navbar() {
           <TooltipContent
             side="top"
             sideOffset={8}
-            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_20px_80px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]"
           >
             <p>Home</p>
             <TooltipArrow className="fill-primary" />
@@ -45,7 +51,7 @@ export function Navbar() {
         {/* <Tooltip>
           <TooltipTrigger>
             <a href="/" target={undefined}>
-              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground/90 hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                 <Icons.certifications className="size-full" />
               </DockIcon>
             </a>
@@ -53,7 +59,7 @@ export function Navbar() {
           <TooltipContent
             side="top"
             sideOffset={8}
-            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_20px_80px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]"
           >
             <p>Certifications</p>
             <TooltipArrow className="fill-primary" />
@@ -63,8 +69,16 @@ export function Navbar() {
         {/* Projects */}
         <Tooltip>
           <TooltipTrigger>
-            <a href="/" target={undefined}>
-              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault()
+                document
+                  .getElementById('projects')
+                  ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }}
+            >
+              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground/90 hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                 <Icons.projects className="size-full" />
               </DockIcon>
             </a>
@@ -72,7 +86,7 @@ export function Navbar() {
           <TooltipContent
             side="top"
             sideOffset={8}
-            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_20px_80px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]"
           >
             <p>Projects</p>
             <TooltipArrow className="fill-primary" />
@@ -83,7 +97,7 @@ export function Navbar() {
         <Tooltip>
           <TooltipTrigger>
             <a href="https://github.com/brii26" target="_blank">
-              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground/90 hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                 <Icons.gitHub className="size-full" />
               </DockIcon>
             </a>
@@ -91,7 +105,7 @@ export function Navbar() {
           <TooltipContent
             side="top"
             sideOffset={8}
-            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_20px_80px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]"
           >
             <p>Github</p>
             <TooltipArrow className="fill-primary" />
@@ -102,7 +116,7 @@ export function Navbar() {
         <Tooltip>
           <TooltipTrigger>
             <a href="https://www.linkedin.com/in/brianrt2/" target="_blank">
-              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground/90 hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                 <Icons.linkedin className="size-full" />
               </DockIcon>
             </a>
@@ -110,7 +124,7 @@ export function Navbar() {
           <TooltipContent
             side="top"
             sideOffset={8}
-            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_20px_80px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]"
           >
             <p>Linkedin</p>
             <TooltipArrow className="fill-primary" />
@@ -120,8 +134,16 @@ export function Navbar() {
         {/* Contact */}
         <Tooltip>
           <TooltipTrigger>
-            <a href="/" target={undefined}>
-              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault()
+                document
+                  .getElementById('contact')
+                  ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }}
+            >
+              <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground/90 hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                 <Icons.contact className="size-full" />
               </DockIcon>
             </a>
@@ -129,7 +151,7 @@ export function Navbar() {
           <TooltipContent
             side="top"
             sideOffset={8}
-            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_20px_80px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]"
           >
             <p>Contact</p>
             <TooltipArrow className="fill-primary" />
@@ -145,14 +167,14 @@ export function Navbar() {
         {/* Toggle Mode */}
         <Tooltip>
           <TooltipTrigger asChild>
-            <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
+            <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-foreground/90 hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
               <Icons.toggle_mode className="size-full" />
             </DockIcon>
           </TooltipTrigger>
           <TooltipContent
             side="top"
             sideOffset={8}
-            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm shadow-[0_20px_80px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]"
           >
             <p>{resolvedTheme === 'light' ? 'Dark Mode' : 'Light Mode'}</p>
             <TooltipArrow className="fill-primary" />
