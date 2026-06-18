@@ -183,14 +183,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects">
-        <ProjectsSection />
-      </section>
-
       {/* Skills */}
       <section id="skills">
         <SkillsSection />
+      </section>
+
+      {/* Projects */}
+      <section id="projects">
+        <ProjectsSection />
       </section>
 
       {/* Education old */}
