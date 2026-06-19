@@ -33,10 +33,14 @@ const SLUG_MAP: Record<string, string> = {
   gRPC: "grpc",
   "Claude API": "claude",
   NumPy: "numpy",
+  "Socket.io": "socketio",
+  TensorFlow: "tensorflow",
+  Keras: "keras",
+  Jupyter: "jupyter",
 };
 
 // black logos that need inverting in dark mode
-const INVERT = new Set(["nextjs", "vercel", "rust", "express", "numpy"]);
+const INVERT = new Set(["nextjs", "vercel", "rust", "express", "numpy", "socketio"]);
 
 export default function TechBadge({ name }: { name: string }) {
   const slug = SLUG_MAP[name];
