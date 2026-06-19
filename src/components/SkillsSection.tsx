@@ -1,10 +1,11 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import Image from "next/image";
+import { AwsLogo } from "@/components/AwsLogo";
 
 const BLUR_FADE_DELAY = 0.04;
 
 // logos with black brand color, inverted in dark mode
-const INVERT = new Set(["nextjs", "vercel", "rust", "express"]);
+const INVERT = new Set(["nextjs", "vercel", "rust", "express", "linux"]);
 
 interface Skill {
   name: string;
@@ -62,7 +63,7 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
       { name: "Nginx", slug: "nginx" },
       { name: "DigitalOcean", slug: "digitalocean" },
       { name: "Vercel", slug: "vercel" },
-      { name: "AWS", slug: "aws", exploring: true },
+      { name: "AWS", slug: "aws-logo", exploring: true },
     ],
   },
   {
@@ -99,13 +100,17 @@ export default function SkillsSection() {
                     className="flex flex-col items-center gap-1.5 w-16"
                   >
                     <div className="relative flex items-center justify-center size-[42px] rounded-[12px] border border-border transition-all duration-300 hover:scale-105 hover:border-white hover:shadow-[0_20px_80px_-10px_rgba(0,0,0,0.5)]">
-                      <Image
-                        src={`/skills/${item.slug}.svg`}
-                        alt={item.name}
-                        width={25}
-                        height={25}
-                        className={`size-[25px] object-contain ${INVERT.has(item.slug) ? "dark:invert" : ""}`}
-                      />
+                      {item.slug === "aws-logo" ? (
+                        <AwsLogo className="size-[25px] object-contain" />
+                      ) : (
+                        <Image
+                          src={`/skills/${item.slug}.svg`}
+                          alt={item.name}
+                          width={25}
+                          height={25}
+                          className={`size-[25px] object-contain ${INVERT.has(item.slug) ? "dark:invert" : ""}`}
+                        />
+                      )}
                     </div>
                     <span className="text-[11px] font-medium text-foreground text-center leading-tight">
                       {item.name}
