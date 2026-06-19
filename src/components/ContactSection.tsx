@@ -11,11 +11,11 @@ interface Contact {
 }
 
 const CONTACTS: Contact[] = [
-  { label: "Email", icon: "gmail", href: "mailto:briantamin@gmail.com" },
-  { label: "WhatsApp", icon: "whatsapp", href: "https://wa.me/" },
-  { label: "Instagram", icon: "instagram", href: "https://instagram.com/" },
-  { label: "LINE", icon: "line", href: "https://line.me/" },
-  { label: "Discord", icon: "discord", href: "https://discord.com/" },
+  { label: "Email", icon: "gmail", href: "https://mail.google.com/mail/?view=cm&fs=1&to=brianricardotamin@gmail.com" },
+  { label: "WhatsApp", icon: "whatsapp", href: "https://wa.me/6281315066919" },
+  { label: "Instagram", icon: "instagram", href: "https://instagram.com/brianricardo26" },
+  { label: "LINE", icon: "line", href: "https://line.me/ti/p/~brian_rt" },
+  { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/in/brianrt2/" },
 ];
 
 export default function ContactSection() {
