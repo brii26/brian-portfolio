@@ -52,14 +52,14 @@ export const metadata: Metadata = {
       'Computer Science student passionate about backend engineering, cloud infrastructure, and building scalable, resilient systems.',
     siteName: 'Brian Ricardo Tamin',
     locale: 'en_US',
-    images: [{ url: '/me.png', width: 1200, height: 630, alt: 'Brian Ricardo Tamin' }],
+    images: [{ url: '/profile/me.png', width: 1200, height: 630, alt: 'Brian Ricardo Tamin' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Brian Ricardo Tamin',
     description:
       'Computer Science student passionate about backend engineering, cloud infrastructure, and building scalable, resilient systems.',
-    images: ['/me.png'],
+    images: ['/profile/me.png'],
   },
   robots: {
     index: true,
@@ -78,7 +78,7 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Brian Ricardo Tamin',
   url: SITE_URL,
-  image: `${SITE_URL}/me.png`,
+  image: `${SITE_URL}/profile/me.png`,
   jobTitle: 'Software Engineer',
   alumniOf: {
     '@type': 'CollegeOrUniversity',
@@ -98,7 +98,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preload" href="/me.png" as="image" />
+        <link rel="preload" href="/profile/me.png" as="image" />
       </head>
       <body
         className={cn(

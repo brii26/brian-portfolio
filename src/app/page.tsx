@@ -18,7 +18,7 @@ const WORK = [
     role: "Computational Thinking Lab Assistant",
     start: "Oct 2024",
     end: "Dec 2024",
-    logoUrl: "/itb-logo.png",
+    logoUrl: "/education/itb.png",
     bullets: [
       "Supervised bi-weekly Python-based labs for 60+ students, overseeing the implementation of 3 algorithmic problem sets while providing on-site technical guidance.",
       "Evaluated student submissions and provided actionable feedback on algorithmic logic, code efficiency, and best practices.",
@@ -32,14 +32,14 @@ const EDUCATION = [
     role: "Bachelor's Degree of Computer Science",
     start: "Aug 2023",
     end: "Present",
-    logoUrl: "/itb-logo.png",
+    logoUrl: "/education/itb.png",
   },
   {
     company: "SMAK 1 Penabur Jakarta",
     role: "High School, Natural Science",
     start: "Jul 2020",
     end: "Apr 2023",
-    logoUrl: "/penabur-logo.png",
+    logoUrl: "/education/penabur.png",
   },
 ]
 
@@ -67,7 +67,7 @@ export default function Home() {
               <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
                 <AvatarImage
                   alt={'My Photo'}
-                  src={'/me.png'}
+                  src={'/profile/me.png'}
                   className="object-cover"
                 />
                 <AvatarFallback>Foto</AvatarFallback>
