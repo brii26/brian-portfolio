@@ -60,6 +60,10 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
     label: "Infrastructure",
     items: [
       { name: "Docker", slug: "docker" },
+      { name: "Kubernetes", slug: "kubernetes", exploring: true },
+      { name: "Kafka", slug: "apachekafka", exploring: true },
+      { name: "Prometheus", slug: "prometheus", exploring: true },
+      { name: "Grafana", slug: "grafana", exploring: true },
       { name: "Nginx", slug: "nginx" },
       { name: "DigitalOcean", slug: "digitalocean" },
       { name: "Vercel", slug: "vercel" },
