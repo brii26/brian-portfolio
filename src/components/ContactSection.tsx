@@ -31,9 +31,11 @@ export default function ContactSection() {
               Get in Touch
             </h2>
             <p className="mx-auto max-w-md text-muted-foreground text-balance">
-              I&apos;m currently seeking an internship opportunity. Feel free to
+              {/* I&apos;m currently seeking an internship opportunity. Feel free to
               reach out on any platform, I&apos;ll get back to you whenever I
-              can.
+              can. */}
+              Feel free to reach out on any platform, I&apos;ll get back to
+              you whenever I can.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
               {CONTACTS.map((c) => (

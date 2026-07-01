@@ -15,6 +15,7 @@ const BLUR_FADE_DELAY = 0.04
 const WORK = [
   {
     company: "Institut Teknologi Bandung",
+    href: "https://itb.ac.id/about-itb",
     role: "Computational Thinking Lab Assistant",
     start: "Oct 2024",
     end: "Dec 2024",
@@ -101,43 +102,14 @@ export default function Home() {
                   </TiltedCard>
                   <TiltedCard
                     className="w-full h-full"
-                    title="Software & Cloud"
+                    title="Software & System Design"
                     glowColor="bg-black dark:bg-white"
                   >
                     <div className="text-xs">
                       <Markdown>
-                        Focused on backend development and cloud-native
-                        technologies. Interested in how systems are designed
-                        to be resilient, maintainable, and scalable in
-                        production.
-                      </Markdown>
-                    </div>
-                  </TiltedCard>
-                </div>
-                <div className="flex vertical-align justify-center gap-4">
-                  <TiltedCard
-                    className="w-full h-full"
-                    title="Currently Learning"
-                    glowColor="bg-black dark:bg-white"
-                  >
-                    <div className="text-xs">
-                      <Markdown>
-                        Diving deeper into cloud infrastructure, specifically
-                        AWS. Exploring how to design and deploy systems that
-                        scale reliably in the cloud.
-                      </Markdown>
-                    </div>
-                  </TiltedCard>
-                  <TiltedCard
-                    className="w-full h-full"
-                    title="The Approach"
-                    glowColor="bg-black dark:bg-white"
-                  >
-                    <div className="text-xs">
-                      <Markdown>
-                        Focusing on daily discipline and execution over rigid
-                        long-term plans. Sustainable growth is about winning
-                        every single day.
+                        Focused on backend development and system design.
+                        Interested in how systems are designed to be
+                        resilient, maintainable, and scalable in production.
                       </Markdown>
                     </div>
                   </TiltedCard>
