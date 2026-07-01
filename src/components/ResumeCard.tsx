@@ -38,11 +38,11 @@ export default function ResumeCard({ logoUrl, company, role, start, end, isLast 
               alt={company}
               width={40}
               height={40}
-              className="size-10 md:size-12 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
+              className="size-10 md:size-12 border border-border rounded-[30%] shadow overflow-hidden object-contain bg-white flex-none"
               onError={() => setImgError(true)}
             />
           ) : (
-            <div className="size-10 md:size-12 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
+            <div className="size-10 md:size-12 border border-border rounded-[30%] shadow bg-muted flex-none" />
           )}
           <div className="flex-1 min-w-0 flex flex-col gap-0.5">
             <div className="font-semibold leading-none">{company}</div>

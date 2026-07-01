@@ -13,6 +13,33 @@ import ContactSection from '@/components/ContactSection'
 const BLUR_FADE_DELAY = 0.04
 
 const WORK = [
+  // {
+  //   company: "Mirae Asset Sekuritas",
+  //   href: "https://www.miraeasset.co.id",
+  //   role: "Backend Engineer Intern",
+  //   start: "Oct 2026",
+  //   end: "Jan 2027",
+  //   logoUrl: "/work/mirae.png",
+  //   tech: [
+  //     { name: "Rust", slug: "rust" },
+  //     { name: "Go", slug: "go" },
+  //     { name: "Docker", slug: "docker" },
+  //     { name: "Kubernetes", slug: "kubernetes" },
+  //   ],
+  // },
+  // {
+  //   company: "BFI Finance",
+  //   href: "https://www.bfi.co.id",
+  //   role: "Software Engineer Intern",
+  //   start: "Jul 2026",
+  //   end: "Present",
+  //   logoUrl: "/work/bfi.png",
+  //   tech: [
+  //     { name: "Java", slug: "java" },
+  //     { name: "Spring Boot", slug: "springboot" },
+  //     { name: "PostgreSQL", slug: "postgresql" },
+  //   ],
+  // },
   {
     company: "Institut Teknologi Bandung",
     href: "https://itb.ac.id/about-itb",
@@ -24,6 +51,7 @@ const WORK = [
       "Supervised bi-weekly Python-based labs for 60+ students, overseeing the implementation of 3 algorithmic problem sets while providing on-site technical guidance.",
       "Evaluated student submissions and provided actionable feedback on algorithmic logic, code efficiency, and best practices.",
     ],
+    tech: [{ name: "Python", slug: "python" }],
   },
 ]
 
@@ -34,13 +62,6 @@ const EDUCATION = [
     start: "Aug 2023",
     end: "Present",
     logoUrl: "/education/itb.png",
-  },
-  {
-    company: "SMAK 1 Penabur Jakarta",
-    role: "High School, Natural Science",
-    start: "Jul 2020",
-    end: "Apr 2023",
-    logoUrl: "/education/penabur.png",
   },
 ]
 

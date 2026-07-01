@@ -5,6 +5,7 @@ import { useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronRight, ChevronDown, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import TechStack, { type Tech } from "@/components/TechStack";
 
 interface WorkCardProps {
   logoUrl?: string;
@@ -14,11 +15,12 @@ interface WorkCardProps {
   start: string;
   end?: string;
   bullets?: string[];
+  tech?: Tech[];
   isLast?: boolean;
   badge?: string;
 }
 
-export default function WorkCard({ logoUrl, company, href, role, start, end, bullets, isLast, badge }: WorkCardProps) {
+export default function WorkCard({ logoUrl, company, href, role, start, end, bullets, tech, isLast, badge }: WorkCardProps) {
   const [imgError, setImgError] = useState(false);
   const [nameHovered, setNameHovered] = useState(false);
 
@@ -26,7 +28,7 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
     <div className="flex gap-x-3">
       {/* timeline column */}
       <div className="flex flex-col items-center flex-none w-3 relative">
-        {!isLast && <div className="absolute top-0 bottom-0 w-px bg-border" />}
+        {!isLast && <div className="absolute top-5 md:top-6 -bottom-5 md:-bottom-6 w-px bg-border" />}
         <div className="flex items-center justify-center size-10 md:size-12 flex-none relative z-10">
           <div className="border border-border rounded-full p-[2px] bg-background">
             <span className="size-[6px] rounded-full bg-black dark:bg-white animate-pulse block" />
@@ -35,28 +37,46 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
       </div>
 
       {/* accordion content */}
-      <div className={`flex-1 min-w-0 ${!isLast ? "pb-6" : ""}`}>
+      <div className={`flex-1 min-w-0 ${!isLast ? "pb-6" : "pb-2"}`}>
         <Accordion.Root type="single" collapsible className="w-full">
           <Accordion.Item value={company}>
             <Accordion.Header asChild>
               <Accordion.Trigger className="w-full cursor-pointer group">
                 <div className="flex items-center gap-x-3 justify-between w-full">
                   <div className="flex items-center gap-x-3 min-w-0">
-                    {logoUrl && !imgError ? (
-                      <Image
-                        src={logoUrl}
-                        alt={company}
-                        width={48}
-                        height={48}
-                        className={cn(
-                          "size-10 md:size-12 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none transition-all duration-200",
-                          href && nameHovered && "border-white shadow-[0_0_16px_2px_rgba(255,255,255,0.35)]"
-                        )}
-                        onError={() => setImgError(true)}
-                      />
-                    ) : (
-                      <div className="size-10 md:size-12 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
-                    )}
+                    {(() => {
+                      const logoEl =
+                        logoUrl && !imgError ? (
+                          <Image
+                            src={logoUrl}
+                            alt={company}
+                            width={48}
+                            height={48}
+                            className={cn(
+                              "size-10 md:size-12 border border-border rounded-[30%] shadow overflow-hidden object-contain bg-white flex-none transition-all duration-200",
+                              href && nameHovered && "border-white shadow-[0_0_16px_2px_rgba(255,255,255,0.35)]"
+                            )}
+                            onError={() => setImgError(true)}
+                          />
+                        ) : (
+                          <div className="size-10 md:size-12 border border-border rounded-[30%] shadow bg-muted flex-none" />
+                        );
+                      return href ? (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          onMouseEnter={() => setNameHovered(true)}
+                          onMouseLeave={() => setNameHovered(false)}
+                          className="flex-none"
+                        >
+                          {logoEl}
+                        </a>
+                      ) : (
+                        logoEl
+                      );
+                    })()}
                     <div className="min-w-0 flex flex-col gap-0.5 text-left">
                       <div className="font-semibold leading-none flex items-center gap-1.5">
                         {href ? (
@@ -67,7 +87,10 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
                             onClick={(e) => e.stopPropagation()}
                             onMouseEnter={() => setNameHovered(true)}
                             onMouseLeave={() => setNameHovered(false)}
-                            className="decoration-muted-foreground/40 underline underline-offset-2 hover:decoration-foreground"
+                            className={cn(
+                              "underline underline-offset-2 transition-colors duration-200",
+                              nameHovered ? "decoration-foreground" : "decoration-muted-foreground/40"
+                            )}
                           >
                             {company}
                           </a>
@@ -112,7 +135,7 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
             </Accordion.Header>
             {bullets && bullets.length > 0 && (
               <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                <ul className="flex flex-col gap-2 ml-[calc(3rem+0.75rem)]">
+                <ul className="flex flex-col gap-2 ml-[calc(3rem+0.75rem)] mt-0.5 pb-2">
                   {bullets.map((b, i) => (
                     <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
                       <span className="mt-[5px] size-[3px] rounded-full bg-white flex-none" />
@@ -121,6 +144,11 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
                   ))}
                 </ul>
               </Accordion.Content>
+            )}
+            {tech && tech.length > 0 && (
+              <div className="ml-[calc(3rem+0.75rem)]">
+                <TechStack items={tech} />
+              </div>
             )}
           </Accordion.Item>
         </Accordion.Root>
