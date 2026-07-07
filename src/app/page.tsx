@@ -27,19 +27,19 @@ const WORK = [
   //     { name: "Kubernetes", slug: "kubernetes" },
   //   ],
   // },
-  // {
-  //   company: "BFI Finance",
-  //   href: "https://www.bfi.co.id",
-  //   role: "Software Engineer Intern",
-  //   start: "Jul 2026",
-  //   end: "Present",
-  //   logoUrl: "/work/bfi.png",
-  //   tech: [
-  //     { name: "Java", slug: "java" },
-  //     { name: "Spring Boot", slug: "springboot" },
-  //     { name: "PostgreSQL", slug: "postgresql" },
-  //   ],
-  // },
+  {
+    company: "BFI Finance",
+    href: "https://www.bfi.co.id",
+    role: "Software Engineer Intern",
+    start: "Jul 2026",
+    end: "Present",
+    logoUrl: "/work/bfi.png",
+    tech: [
+      { name: "Java", slug: "java" },
+      { name: "Spring Boot", slug: "springboot" },
+      { name: "PostgreSQL", slug: "postgresql" },
+    ],
+  },
   {
     company: "Institut Teknologi Bandung",
     href: "https://itb.ac.id/about-itb",
