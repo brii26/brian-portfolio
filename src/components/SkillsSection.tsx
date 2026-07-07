@@ -45,7 +45,7 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
       { name: "Express", slug: "express" },
       { name: "NestJS", slug: "nestjs" },
       { name: "Gin", slug: "gin" },
-      { name: "Spring Boot", slug: "springboot", exploring: true },
+      { name: "Spring Boot", slug: "springboot" },
     ],
   },
   {
