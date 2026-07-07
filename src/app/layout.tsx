@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { LightRays } from '@/components/magicui/light-rays'
+import { Component as SpotlightCursor } from '@/components/ui/cursor'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -114,6 +115,7 @@ export default function RootLayout({
         <Providers>
           <TooltipProvider delayDuration={0}>
             <LightRays />
+            <SpotlightCursor config={{ radius: 100 }} />
             {/* </div> */}
             <div className="relative z-10 max-w-2xl mx-auto py-12 pb-24 sm:py-24 px-6">
               {children}
