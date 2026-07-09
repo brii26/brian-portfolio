@@ -35,6 +35,8 @@ const WORK = [
     end: "Present",
     logoUrl: "/work/bfi.png",
     tech: [
+      { name: "TypeScript", slug: "typescript" },
+      { name: "React", slug: "react" },
       { name: "Java", slug: "java" },
       { name: "Spring Boot", slug: "springboot" },
       { name: "PostgreSQL", slug: "postgresql" },
