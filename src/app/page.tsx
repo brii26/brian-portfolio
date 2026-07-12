@@ -34,12 +34,18 @@ const WORK = [
     start: "Jul 2026",
     end: "Present",
     logoUrl: "/work/bfi.png",
+    bullets: [
+      "Contributed to migrating an enterprise internal system from a third-party vendor to an in-house platform.",
+      "Implemented responsive React user interfaces from Figma designs according to defined user stories.",
+      "Implemented backend services in Spring Boot by adapting service logic and PostgreSQL queries for a new API contract.",
+    ],
     tech: [
       { name: "TypeScript", slug: "typescript" },
       { name: "React", slug: "react" },
       { name: "Java", slug: "java" },
       { name: "Spring Boot", slug: "springboot" },
       { name: "PostgreSQL", slug: "postgresql" },
+      { name: "React", slug: "react" },
     ],
   },
   {
