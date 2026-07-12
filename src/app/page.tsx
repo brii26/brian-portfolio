@@ -45,7 +45,6 @@ const WORK = [
       { name: "Java", slug: "java" },
       { name: "Spring Boot", slug: "springboot" },
       { name: "PostgreSQL", slug: "postgresql" },
-      { name: "React", slug: "react" },
     ],
   },
   {
