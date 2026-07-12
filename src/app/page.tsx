@@ -36,8 +36,8 @@ const WORK = [
     logoUrl: "/work/bfi.png",
     bullets: [
       "Contributed to migrating an enterprise internal system from a third-party vendor to an in-house platform.",
+      "Developed Spring Boot backend services and modified PostgreSQL queries to support a new API contract.",
       "Implemented responsive React user interfaces from Figma designs according to defined user stories.",
-      "Implemented backend services in Spring Boot by adapting service logic and PostgreSQL queries for a new API contract.",
     ],
     tech: [
       { name: "Java", slug: "java" },
