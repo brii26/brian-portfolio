@@ -40,10 +40,10 @@ const WORK = [
       "Implemented backend services in Spring Boot by adapting service logic and PostgreSQL queries for a new API contract.",
     ],
     tech: [
-      { name: "TypeScript", slug: "typescript" },
-      { name: "React", slug: "react" },
       { name: "Java", slug: "java" },
       { name: "Spring Boot", slug: "springboot" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "React", slug: "react" },
       { name: "PostgreSQL", slug: "postgresql" },
     ],
   },
