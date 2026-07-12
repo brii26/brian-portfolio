@@ -36,8 +36,8 @@ const WORK = [
     logoUrl: "/work/bfi.png",
     bullets: [
       "Contributed to migrating an enterprise internal system from a third-party vendor to an in-house platform.",
-      "Developed Spring Boot backend services and modified PostgreSQL queries to support a new API contract.",
-      "Implemented responsive React user interfaces from Figma designs according to defined user stories.",
+      "Built responsive React user interfaces from Figma designs.",
+      "Developed Spring Boot backend services with PostgreSQL for a new API contract.",
     ],
     tech: [
       { name: "Java", slug: "java" },
@@ -55,8 +55,8 @@ const WORK = [
     end: "Dec 2024",
     logoUrl: "/education/itb.png",
     bullets: [
-      "Supervised bi-weekly Python-based labs for 60+ students, overseeing the implementation of 3 algorithmic problem sets while providing on-site technical guidance.",
-      "Evaluated student submissions and provided actionable feedback on algorithmic logic, code efficiency, and best practices.",
+      "Supervised bi-weekly Python programming labs for 60+ students across 3 programming problem sets.",
+      "Evaluated student submissions and provided feedback on algorithmic correctness, code efficiency, and programming best practices.",
     ],
     tech: [{ name: "Python", slug: "python" }],
   },
