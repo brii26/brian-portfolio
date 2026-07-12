@@ -35,7 +35,7 @@ const WORK = [
     end: "Present",
     logoUrl: "/work/bfi.png",
     bullets: [
-      "Contributed to migrating an enterprise internal system from a third-party vendor to an in-house platform.",
+      "Contributed to migrating an internal enterprise system from a third-party vendor to an in-house platform.",
       "Built responsive React user interfaces from Figma designs.",
       "Developed Spring Boot backend services with PostgreSQL for a new API contract.",
     ],

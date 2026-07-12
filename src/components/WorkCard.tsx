@@ -135,7 +135,7 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
             </Accordion.Header>
             {bullets && bullets.length > 0 && (
               <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                <ul className="flex flex-col gap-2 ml-[calc(3rem+0.75rem)] mt-0.5 pb-2">
+                <ul className="flex flex-col gap-2 ml-[calc(3rem+0.75rem)] mt-0.5 pb-2 max-w-[75%]">
                   {bullets.map((b, i) => (
                     <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
                       <span className="mt-[5px] size-[3px] rounded-full bg-white flex-none" />
