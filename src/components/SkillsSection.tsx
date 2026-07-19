@@ -17,13 +17,13 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
   {
     label: "Languages",
     items: [
+      { name: "Java", slug: "java" },
+      { name: "Rust", slug: "rust" },
+      { name: "Go", slug: "go" },
       { name: "TypeScript", slug: "typescript" },
       { name: "JavaScript", slug: "javascript" },
-      { name: "Go", slug: "go" },
-      { name: "Java", slug: "java" },
       { name: "Python", slug: "python" },
       { name: "PHP", slug: "php" },
-      { name: "Rust", slug: "rust" },
       { name: "C", slug: "c" },
       { name: "C++", slug: "cplusplus" },
       { name: "Kotlin", slug: "kotlin" },
@@ -41,11 +41,11 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
   {
     label: "Backend",
     items: [
+      { name: "Spring Boot", slug: "springboot" },
       { name: "Node.js", slug: "nodejs" },
       { name: "Express", slug: "express" },
       { name: "NestJS", slug: "nestjs" },
       { name: "Gin", slug: "gin" },
-      { name: "Spring Boot", slug: "springboot" },
     ],
   },
   {
@@ -61,13 +61,14 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
     items: [
       { name: "Docker", slug: "docker" },
       { name: "Kubernetes", slug: "kubernetes", exploring: true },
-      { name: "Kafka", slug: "apachekafka", exploring: true },
-      { name: "Prometheus", slug: "prometheus", exploring: true },
-      { name: "Grafana", slug: "grafana", exploring: true },
+      // { name: "Kafka", slug: "apachekafka", exploring: true },
+      { name: "RabbitMQ", slug: "rabbitmq", exploring: true },
+      // { name: "Prometheus", slug: "prometheus", exploring: true },
+      // { name: "Grafana", slug: "grafana", exploring: true },
       { name: "Nginx", slug: "nginx" },
       { name: "DigitalOcean", slug: "digitalocean" },
       { name: "Vercel", slug: "vercel" },
-      { name: "AWS", slug: "aws-logo", exploring: true },
+      // { name: "AWS", slug: "aws-logo", exploring: true },
     ],
   },
   {

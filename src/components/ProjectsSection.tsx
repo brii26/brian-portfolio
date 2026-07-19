@@ -30,7 +30,7 @@ const PROJECTS: Project[] = [
     tags: ["Next.js", "Go", "Redis", "Claude API", "Docker", "TypeScript", "Gin"],
     links: [
       { type: "github", href: "https://github.com/brii26/scrape-lm" },
-      { type: "website", href: "https://scrapelm.com" },
+      // { type: "website", href: "https://scrapelm.com" },
     ],
     gradient: "from-sky-500/30 to-indigo-500/30",
     image: "/projects/scrape-lm.webp",
