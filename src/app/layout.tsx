@@ -71,6 +71,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [{ url: '/icon.png', sizes: '512x512', type: 'image/png' }],
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
 }
 
 const jsonLd = {
