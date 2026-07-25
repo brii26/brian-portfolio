@@ -13,62 +13,57 @@ import ContactSection from '@/components/ContactSection'
 const BLUR_FADE_DELAY = 0.04
 
 const WORK = [
-  // {
-  //   company: "Mirae Asset Sekuritas",
-  //   href: "https://www.miraeasset.co.id",
-  //   role: "Backend Engineer Intern",
-  //   start: "Oct 2026",
-  //   end: "Jan 2027",
-  //   logoUrl: "/work/mirae.png",
-  //   tech: [
-  //     { name: "Rust", slug: "rust" },
-  //     { name: "Go", slug: "go" },
-  //     { name: "Docker", slug: "docker" },
-  //     { name: "Kubernetes", slug: "kubernetes" },
-  //   ],
-  // },
   {
-    company: "BFI Finance",
-    href: "https://www.bfi.co.id",
-    role: "Software Engineer Intern",
-    start: "Jul 2026",
-    end: "Present",
-    logoUrl: "/work/bfi.png",
+    company: 'Mirae Asset Sekuritas',
+    href: 'https://www.miraeasset.co.id',
+    role: 'Incoming Backend Engineer Intern',
+    start: 'Oct 2026',
+    end: 'Jan 2027',
+    dateOverride: 'Starting Oct 2026',
+    logoUrl: '/work/mirae.png',
+  },
+  {
+    company: 'BFI Finance',
+    href: 'https://www.bfi.co.id',
+    role: 'Software Engineer Intern',
+    start: 'Jul 2026',
+    end: 'Present',
+    logoUrl: '/work/bfi.png',
     bullets: [
-      "Contributed to migrating an internal enterprise system from a third-party vendor to an in-house platform.",
-      "Developed Spring Boot backend services with PostgreSQL for a new API contract.",
-      "Implemented responsive React user interfaces from Figma designs.",
+      'Contributed to migrating an internal enterprise system from a third-party vendor to an in-house platform.',
+      'Developed Spring Boot backend services with PostgreSQL for a new API contract.',
+      'Implemented responsive React user interfaces from Figma designs & its integrations.',
     ],
     tech: [
-      { name: "Java", slug: "java" },
-      { name: "Spring Boot", slug: "springboot" },
-      { name: "TypeScript", slug: "typescript" },
-      { name: "React", slug: "react" },
-      { name: "PostgreSQL", slug: "postgresql" },
+      { name: 'Java', slug: 'java' },
+      { name: 'Spring Boot', slug: 'springboot' },
+      { name: 'TypeScript', slug: 'typescript' },
+      { name: 'React', slug: 'react' },
+      { name: 'PostgreSQL', slug: 'postgresql' },
     ],
   },
   {
-    company: "Institut Teknologi Bandung",
-    href: "https://itb.ac.id/about-itb",
-    role: "Computational Thinking Lab Assistant",
-    start: "Oct 2024",
-    end: "Dec 2024",
-    logoUrl: "/education/itb.png",
+    company: 'Institut Teknologi Bandung',
+    href: 'https://itb.ac.id/about-itb',
+    role: 'Computational Thinking Lab Assistant',
+    start: 'Oct 2024',
+    end: 'Dec 2024',
+    logoUrl: '/education/itb.png',
     bullets: [
-      "Supervised bi-weekly Python programming labs for 60+ students across 3 programming problem sets.",
-      "Evaluated student submissions and provided feedback on algorithmic correctness, code efficiency, and programming best practices.",
+      'Supervised bi-weekly Python programming labs for 60+ students across 3 programming problem sets.',
+      'Evaluated student submissions and provided feedback on algorithmic correctness, code efficiency, and programming best practices.',
     ],
-    tech: [{ name: "Python", slug: "python" }],
+    tech: [{ name: 'Python', slug: 'python' }],
   },
 ]
 
 const EDUCATION = [
   {
-    company: "Institut Teknologi Bandung",
+    company: 'Institut Teknologi Bandung',
     role: "Bachelor's Degree of Computer Science",
-    start: "Aug 2023",
-    end: "Present",
-    logoUrl: "/education/itb.png",
+    start: 'Aug 2023',
+    end: 'Present',
+    logoUrl: '/education/itb.png',
   },
 ]
 
@@ -136,15 +131,14 @@ export default function Home() {
                     <div className="text-xs">
                       <Markdown>
                         Focused on backend development and system design.
-                        Interested in how systems are designed to be
-                        resilient, maintainable, and scalable in production.
+                        Interested in how systems are designed to be resilient,
+                        maintainable, and scalable in production.
                       </Markdown>
                     </div>
                   </TiltedCard>
                 </div>
               </div>
             </div>
-
           </BlurFade>
         </div>
       </section>
@@ -157,10 +151,12 @@ export default function Home() {
           </BlurFade>
           <div className="flex flex-col">
             {WORK.map((item, index) => (
-              <BlurFade key={item.company + index} delay={BLUR_FADE_DELAY * 6 + index * 0.05}>
+              <BlurFade
+                key={item.company + index}
+                delay={BLUR_FADE_DELAY * 6 + index * 0.05}
+              >
                 <WorkCard {...item} isLast={index === WORK.length - 1} />
               </BlurFade>
-
             ))}
           </div>
         </div>
@@ -174,10 +170,12 @@ export default function Home() {
           </BlurFade>
           <div className="flex flex-col">
             {EDUCATION.map((item, index) => (
-              <BlurFade key={item.company + index} delay={BLUR_FADE_DELAY * 8 + index * 0.05}>
+              <BlurFade
+                key={item.company + index}
+                delay={BLUR_FADE_DELAY * 8 + index * 0.05}
+              >
                 <ResumeCard {...item} isLast={index === EDUCATION.length - 1} />
               </BlurFade>
-
             ))}
           </div>
         </div>

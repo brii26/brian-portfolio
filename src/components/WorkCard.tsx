@@ -1,34 +1,51 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { useState } from "react";
-import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronRight, ChevronDown, ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
-import TechStack, { type Tech } from "@/components/TechStack";
+import Image from 'next/image'
+import { useState } from 'react'
+import * as Accordion from '@radix-ui/react-accordion'
+import { ChevronRight, ChevronDown, ArrowUpRight } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import TechStack, { type Tech } from '@/components/TechStack'
 
 interface WorkCardProps {
-  logoUrl?: string;
-  company: string;
-  href?: string;
-  role: string;
-  start: string;
-  end?: string;
-  bullets?: string[];
-  tech?: Tech[];
-  isLast?: boolean;
-  badge?: string;
+  logoUrl?: string
+  company: string
+  href?: string
+  role: string
+  start: string
+  end?: string
+  dateOverride?: string
+  bullets?: string[]
+  tech?: Tech[]
+  isLast?: boolean
+  badge?: string
+  defaultOpen?: boolean
 }
 
-export default function WorkCard({ logoUrl, company, href, role, start, end, bullets, tech, isLast, badge }: WorkCardProps) {
-  const [imgError, setImgError] = useState(false);
-  const [nameHovered, setNameHovered] = useState(false);
+export default function WorkCard({
+  logoUrl,
+  company,
+  href,
+  role,
+  start,
+  end,
+  dateOverride,
+  bullets,
+  tech,
+  isLast,
+  badge,
+  defaultOpen,
+}: WorkCardProps) {
+  const [imgError, setImgError] = useState(false)
+  const [nameHovered, setNameHovered] = useState(false)
 
   return (
     <div className="flex gap-x-3">
       {/* timeline column */}
       <div className="flex flex-col items-center flex-none w-3 relative">
-        {!isLast && <div className="absolute top-5 md:top-6 -bottom-5 md:-bottom-6 w-px bg-border" />}
+        {!isLast && (
+          <div className="absolute top-5 md:top-6 -bottom-5 md:-bottom-6 w-px bg-border" />
+        )}
         <div className="flex items-center justify-center size-10 md:size-12 flex-none relative z-10">
           <div className="border border-border rounded-full p-[2px] bg-background">
             <span className="size-[6px] rounded-full bg-black dark:bg-white animate-pulse block" />
@@ -37,8 +54,15 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
       </div>
 
       {/* accordion content */}
-      <div className={`flex-1 min-w-0 ${!isLast ? "pb-6" : "pb-2"}`}>
-        <Accordion.Root type="single" collapsible className="w-full">
+      <div
+        className={`flex-1 min-w-0 ${!isLast ? 'pb-[calc(1.5rem+5px)]' : 'pb-2'}`}
+      >
+        <Accordion.Root
+          type="single"
+          collapsible
+          className="w-full"
+          defaultValue={defaultOpen ? company : undefined}
+        >
           <Accordion.Item value={company}>
             <Accordion.Header asChild>
               <Accordion.Trigger className="w-full cursor-pointer group">
@@ -50,17 +74,21 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
                           <Image
                             src={logoUrl}
                             alt={company}
-                            width={48}
-                            height={48}
+                            width={40}
+                            height={40}
                             className={cn(
-                              "size-10 md:size-12 border border-border rounded-[30%] shadow overflow-hidden object-contain bg-white flex-none transition-all duration-200",
-                              href && nameHovered && "border-white shadow-[0_0_16px_2px_rgba(255,255,255,0.35)]"
+                              'size-10 md:size-12 border-0 rounded-[30%] shadow overflow-hidden object-contain bg-white flex-none transition-all duration-200',
+                              company === 'Institut Teknologi Bandung' &&
+                                'p-px',
+                              href &&
+                                nameHovered &&
+                                'shadow-[0_0_16px_2px_rgba(255,255,255,0.35)]',
                             )}
                             onError={() => setImgError(true)}
                           />
                         ) : (
                           <div className="size-10 md:size-12 border border-border rounded-[30%] shadow bg-muted flex-none" />
-                        );
+                        )
                       return href ? (
                         <a
                           href={href}
@@ -75,7 +103,7 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
                         </a>
                       ) : (
                         logoEl
-                      );
+                      )
                     })()}
                     <div className="min-w-0 flex flex-col gap-0.5 text-left">
                       <div className="font-semibold leading-none flex items-center gap-1.5">
@@ -88,8 +116,10 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
                             onMouseEnter={() => setNameHovered(true)}
                             onMouseLeave={() => setNameHovered(false)}
                             className={cn(
-                              "underline underline-offset-2 transition-colors duration-200",
-                              nameHovered ? "decoration-foreground" : "decoration-muted-foreground/40"
+                              'underline underline-offset-2 transition-colors duration-200',
+                              nameHovered
+                                ? 'decoration-foreground'
+                                : 'decoration-muted-foreground/40',
                             )}
                           >
                             {company}
@@ -103,32 +133,40 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
                           </span>
                         )}
                         <span className="relative inline-flex items-center w-3.5 h-3.5">
-                          <ChevronRight className={cn(
-                            "absolute h-3.5 w-3.5 text-muted-foreground stroke-2 transition-all duration-200",
-                            "opacity-0 group-hover:opacity-100",
-                            "group-data-[state=open]:opacity-0",
-                            nameHovered && "!opacity-0"
-                          )} />
-                          <ChevronDown className={cn(
-                            "absolute h-3.5 w-3.5 text-muted-foreground stroke-2 transition-all duration-200",
-                            "opacity-0",
-                            "group-data-[state=open]:opacity-100",
-                            nameHovered && "!opacity-0"
-                          )} />
+                          <ChevronRight
+                            className={cn(
+                              'absolute h-3.5 w-3.5 text-muted-foreground stroke-2 transition-all duration-200',
+                              'opacity-0 group-hover:opacity-100',
+                              'group-data-[state=open]:opacity-0',
+                              nameHovered && '!opacity-0',
+                            )}
+                          />
+                          <ChevronDown
+                            className={cn(
+                              'absolute h-3.5 w-3.5 text-muted-foreground stroke-2 transition-all duration-200',
+                              'opacity-0',
+                              'group-data-[state=open]:opacity-100',
+                              nameHovered && '!opacity-0',
+                            )}
+                          />
                           {href && (
-                            <ArrowUpRight className={cn(
-                              "absolute h-3.5 w-3.5 text-muted-foreground stroke-2 transition-all duration-200",
-                              nameHovered ? "opacity-100" : "opacity-0"
-                            )} />
+                            <ArrowUpRight
+                              className={cn(
+                                'absolute h-3.5 w-3.5 text-muted-foreground stroke-2 transition-all duration-200',
+                                nameHovered ? 'opacity-100' : 'opacity-0',
+                              )}
+                            />
                           )}
                         </span>
                       </div>
-                      <p className="text-[12px] text-foreground font-normal mt-[3px]">{role}</p>
+                      <p className="text-[12px] text-foreground font-normal mt-[3px]">
+                        {role}
+                      </p>
                     </div>
                   </div>
                   <div className="flex-1" />
                   <div className="text-xs tabular-nums text-muted-foreground text-right flex-none">
-                    {start} - {end ?? "Present"}
+                    {dateOverride ?? `${start} - ${end ?? 'Present'}`}
                   </div>
                 </div>
               </Accordion.Trigger>
@@ -137,7 +175,10 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
               <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
                 <ul className="flex flex-col gap-2 ml-[calc(3rem+0.75rem)] mt-0.5 pb-2 max-w-[75%]">
                   {bullets.map((b, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-xs text-muted-foreground"
+                    >
                       <span className="mt-[5px] size-[3px] rounded-full bg-white flex-none" />
                       {b}
                     </li>
@@ -154,5 +195,5 @@ export default function WorkCard({ logoUrl, company, href, role, start, end, bul
         </Accordion.Root>
       </div>
     </div>
-  );
+  )
 }

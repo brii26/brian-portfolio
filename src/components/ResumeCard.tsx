@@ -1,26 +1,35 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image'
+import { useState } from 'react'
 
 interface ResumeCardProps {
-  logoUrl?: string;
-  company: string;
-  role: string;
-  start: string;
-  end?: string;
-  isLast?: boolean;
+  logoUrl?: string
+  company: string
+  role: string
+  start: string
+  end?: string
+  isLast?: boolean
 }
 
-export default function ResumeCard({ logoUrl, company, role, start, end, isLast }: ResumeCardProps) {
-  const [imgError, setImgError] = useState(false);
+export default function ResumeCard({
+  logoUrl,
+  company,
+  role,
+  start,
+  end,
+  isLast,
+}: ResumeCardProps) {
+  const [imgError, setImgError] = useState(false)
 
   return (
     <div className="flex gap-x-3">
       {/* timeline column */}
       <div className="flex flex-col items-center flex-none w-3 relative">
         {/* connector line */}
-        {!isLast && <div className="absolute top-5 md:top-6 -bottom-5 md:-bottom-6 w-px bg-border" />}
+        {!isLast && (
+          <div className="absolute top-5 md:top-6 -bottom-5 md:-bottom-6 w-px bg-border" />
+        )}
         {/* dot overlay */}
         <div className="flex items-center justify-center size-8 md:size-10 flex-none relative z-10">
           <div className="border border-border rounded-full p-[2px] bg-background">
@@ -30,15 +39,17 @@ export default function ResumeCard({ logoUrl, company, role, start, end, isLast 
       </div>
 
       {/* card content */}
-      <div className={`flex items-center gap-x-3 justify-between flex-1 min-w-0 ${!isLast ? "pb-6" : ""}`}>
+      <div
+        className={`flex items-center gap-x-3 justify-between flex-1 min-w-0 ${!isLast ? 'pb-6' : ''}`}
+      >
         <div className="flex items-center gap-x-3 flex-1 min-w-0">
           {logoUrl && !imgError ? (
             <Image
               src={logoUrl}
               alt={company}
-              width={40}
-              height={40}
-              className="size-10 md:size-12 border border-border rounded-[30%] shadow overflow-hidden object-contain bg-white flex-none"
+              width={48}
+              height={48}
+              className="size-10 md:size-12 border-0 rounded-[30%] shadow overflow-hidden object-contain bg-white flex-none p-px"
               onError={() => setImgError(true)}
             />
           ) : (
@@ -50,9 +61,9 @@ export default function ResumeCard({ logoUrl, company, role, start, end, isLast 
           </div>
         </div>
         <div className="text-xs tabular-nums text-muted-foreground text-right flex-none">
-          {start} - {end ?? "Present"}
+          {start} - {end ?? 'Present'}
         </div>
       </div>
     </div>
-  );
+  )
 }
