@@ -124,6 +124,7 @@ const DockIcon = forwardRef<HTMLDivElement, DockIconProps>(
     )
   },
 )
+DockIcon.displayName = 'DockIcon'
 
 export { Dock, DockIcon }
 export type { DockProps, DockIconProps }
