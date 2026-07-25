@@ -5,7 +5,7 @@ import {
   motion,
   useInView,
   Variants,
-  MarginType,
+  UseInViewOptions,
 } from 'motion/react'
 import { useRef } from 'react'
 
@@ -37,7 +37,9 @@ const BlurFade = ({
   const ref = useRef(null)
   const inViewResult = useInView(ref, {
     once: true,
-    ...(inViewMargin ? { margin: inViewMargin as MarginType } : {}),
+    ...(inViewMargin
+      ? { margin: inViewMargin as UseInViewOptions['margin'] }
+      : {}),
   })
   const isInView = !inView || inViewResult
   const defaultVariants: Variants = {
