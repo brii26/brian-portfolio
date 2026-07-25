@@ -1,22 +1,34 @@
-import BlurFade from "@/components/magicui/blur-fade";
-import Image from "next/image";
+import BlurFade from '@/components/magicui/blur-fade'
+import Image from 'next/image'
 
-const BLUR_FADE_DELAY = 0.04;
+const BLUR_FADE_DELAY = 0.04
 
 interface Contact {
-  label: string;
-  icon: string;
-  href: string;
-  invert?: boolean;
+  label: string
+  icon: string
+  href: string
+  invert?: boolean
 }
 
 const CONTACTS: Contact[] = [
-  { label: "Email", icon: "gmail", href: "https://mail.google.com/mail/?view=cm&fs=1&to=brianricardotamin@gmail.com" },
-  { label: "WhatsApp", icon: "whatsapp", href: "https://wa.me/6281315066919" },
-  { label: "Instagram", icon: "instagram", href: "https://instagram.com/brianricardo26" },
-  { label: "LINE", icon: "line", href: "https://line.me/ti/p/~brian_rt" },
-  { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/in/brianrt2/" },
-];
+  {
+    label: 'Email',
+    icon: 'gmail',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=brianricardotamin@gmail.com',
+  },
+  { label: 'WhatsApp', icon: 'whatsapp', href: 'https://wa.me/6281315066919' },
+  {
+    label: 'Instagram',
+    icon: 'instagram',
+    href: 'https://instagram.com/brianricardo26',
+  },
+  { label: 'LINE', icon: 'line', href: 'https://line.me/ti/p/~brian_rt' },
+  {
+    label: 'LinkedIn',
+    icon: 'linkedin',
+    href: 'https://www.linkedin.com/in/brianrt2/',
+  },
+]
 
 export default function ContactSection() {
   return (
@@ -34,8 +46,8 @@ export default function ContactSection() {
               {/* I&apos;m currently seeking an internship opportunity. Feel free to
               reach out on any platform, I&apos;ll get back to you whenever I
               can. */}
-              Feel free to reach out on any platform, I&apos;ll get back to
-              you whenever I can.
+              Feel free to reach out on any platform, I&apos;ll get back to you
+              whenever I can.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
               {CONTACTS.map((c) => (
@@ -52,7 +64,7 @@ export default function ContactSection() {
                     alt={c.label}
                     width={20}
                     height={20}
-                    className={`size-5 ${c.invert ? "dark:invert" : ""}`}
+                    className={`size-5 ${c.invert ? 'dark:invert' : ''}`}
                   />
                 </a>
               ))}
@@ -61,5 +73,5 @@ export default function ContactSection() {
         </div>
       </BlurFade>
     </div>
-  );
+  )
 }

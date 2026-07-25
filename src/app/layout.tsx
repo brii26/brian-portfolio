@@ -52,7 +52,14 @@ export const metadata: Metadata = {
       'Computer Science student passionate about backend engineering, cloud infrastructure, and building scalable, resilient systems.',
     siteName: 'Brian Ricardo Tamin',
     locale: 'en_US',
-    images: [{ url: '/profile/me.png', width: 1200, height: 630, alt: 'Brian Ricardo Tamin' }],
+    images: [
+      {
+        url: '/profile/me.png',
+        width: 1200,
+        height: 630,
+        alt: 'Brian Ricardo Tamin',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

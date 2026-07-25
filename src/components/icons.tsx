@@ -72,13 +72,7 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <circle
-        cx="12"
-        cy="9"
-        r="6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
+      <circle cx="12" cy="9" r="6" stroke="currentColor" strokeWidth="1.5" />
       <path
         d="M8.5 13.5L7 21L12 18.5L17 21L15.5 13.5"
         stroke="currentColor"
