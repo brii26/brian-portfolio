@@ -2,10 +2,11 @@
 
 import { cn } from '@/lib/utils'
 import { motion, Variants } from 'motion/react'
-import { useMemo } from 'react'
+import { ReactNode, useMemo } from 'react'
 
 interface BlurFadeTextProps {
   text: string
+  children?: ReactNode
   className?: string
   variant?: {
     hidden: { y: number }
@@ -19,6 +20,7 @@ interface BlurFadeTextProps {
 }
 const BlurFadeText = ({
   text,
+  children,
   className,
   variant,
   duration = 0.4,
@@ -77,7 +79,7 @@ const BlurFadeText = ({
         }}
         className={cn('inline-block', className)}
       >
-        {text}
+        {children ?? text}
       </motion.span>
     </div>
   )
