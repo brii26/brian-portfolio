@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import TiltedCard from '@/components/TiltedCard'
 import ResumeCard from '@/components/ResumeCard'
 import WorkCard from '@/components/WorkCard'
+import ActivityChip from '@/components/ActivityChip'
 import SkillsSection from '@/components/SkillsSection'
 import ProjectsSection from '@/components/ProjectsSection'
 import ContactSection from '@/components/ContactSection'
@@ -15,12 +16,30 @@ const BLUR_FADE_DELAY = 0.04
 const WORK = [
   {
     company: 'Mirae Asset Sekuritas',
-    href: 'https://www.miraeasset.co.id',
-    role: 'Incoming Backend Engineer Intern',
+    href: 'https://sekuritas.miraeasset.co.id/who-we-are',
+    role: 'Backend Engineer Intern',
     start: 'Oct 2026',
     end: 'Jan 2027',
     dateOverride: 'Starting Oct 2026',
     logoUrl: '/work/mirae.png',
+    incoming: true,
+    bullets: ['Incoming, starting October 2026.'],
+  },
+  {
+    company: 'MrScraper',
+    href: 'https://mrscraper.com',
+    role: 'AI Automation Engineer',
+    start: 'Aug 2026',
+    end: 'Present',
+    logoUrl: '/work/mrscraper.png',
+    active: true,
+    bullets: [
+      'Engineering an AI-powered Hospitality Competitive Intelligence workflow template using MrScraper and n8n.',
+    ],
+    tech: [
+      { name: 'n8n', slug: 'n8n' },
+      { name: 'Docker', slug: 'docker' },
+    ],
   },
   {
     company: 'BFI Finance',
@@ -29,10 +48,9 @@ const WORK = [
     start: 'Jul 2026',
     end: 'Present',
     logoUrl: '/work/bfi.png',
+    active: true,
     bullets: [
-      'Contributed to migrating an internal enterprise system from a third-party vendor to an in-house platform.',
-      'Developed Spring Boot backend services with PostgreSQL for a new API contract.',
-      'Implemented responsive React user interfaces from Figma designs & its integrations.',
+      'Engineered a document template engine that automated data population across 65+ document templates, simplifying document generation for client archival and printing workflows.',
     ],
     tech: [
       { name: 'Java', slug: 'java' },
@@ -43,15 +61,14 @@ const WORK = [
     ],
   },
   {
-    company: 'Institut Teknologi Bandung',
+    company: 'Bandung Institute of Technology',
     href: 'https://itb.ac.id/about-itb',
     role: 'Computational Thinking Lab Assistant',
     start: 'Oct 2024',
     end: 'Dec 2024',
     logoUrl: '/education/itb.png',
     bullets: [
-      'Supervised bi-weekly Python programming labs for 60+ students across 3 programming problem sets.',
-      'Evaluated student submissions and provided feedback on algorithmic correctness, code efficiency, and programming best practices.',
+      'Supervised bi-weekly Python programming labs for 60+ students across 3 problem sets, evaluating submissions and providing feedback on algorithmic correctness, code efficiency, and programming best practices.',
     ],
     tech: [{ name: 'Python', slug: 'python' }],
   },
@@ -59,7 +76,7 @@ const WORK = [
 
 const EDUCATION = [
   {
-    company: 'Institut Teknologi Bandung',
+    company: 'Bandung Institute of Technology',
     role: "Bachelor's Degree of Computer Science",
     start: 'Aug 2023',
     end: 'Present',
@@ -83,8 +100,19 @@ export default function Home() {
               <BlurFadeText
                 className="text-muted-foreground max-w-150 md:text-lg lg:text-xl"
                 delay={BLUR_FADE_DELAY}
-                text="Penultimate-year CS student passionate about backend engineering, cloud infrastructure, and building systems that are scalable and resilient in production."
-              />
+                text="Software Engineer with full-stack internship experience engineering solutions for financial institutions, passionate about backend engineering, system design, and distributed systems."
+              >
+                Software Engineer with{' '}
+                <span className="font-bold underline underline-offset-2">
+                  full-stack internship
+                </span>{' '}
+                experience engineering solutions for{' '}
+                <span className="font-bold underline underline-offset-2">
+                  financial institutions
+                </span>
+                , passionate about backend engineering, system design, and
+                distributed systems.
+              </BlurFadeText>
             </div>
             {/* Profile Picture */}
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
@@ -97,6 +125,43 @@ export default function Home() {
                 <AvatarFallback>Foto</AvatarFallback>
               </Avatar>
             </BlurFade>
+          </div>
+          <div className="order-3 -mt-[21px]">
+            <div className="flex flex-wrap gap-2">
+              <BlurFade
+                delay={BLUR_FADE_DELAY + 0.3}
+                yOffset={0}
+                className="flex"
+              >
+                <ActivityChip
+                  logoUrl="/education/itb.png"
+                  label="Final Year CS Student"
+                  sublabel="Bandung Institute of Technology"
+                />
+              </BlurFade>
+              <BlurFade
+                delay={BLUR_FADE_DELAY * 2 + 0.3}
+                yOffset={0}
+                className="flex"
+              >
+                <ActivityChip
+                  logoUrl="/work/bfi.png"
+                  label="Software Engineer Intern"
+                  sublabel="BFI Finance"
+                />
+              </BlurFade>
+              <BlurFade
+                delay={BLUR_FADE_DELAY * 3 + 0.3}
+                yOffset={0}
+                className="flex"
+              >
+                <ActivityChip
+                  logoUrl="/work/mrscraper.png"
+                  label="AI Automation Engineer"
+                  sublabel="MrScraper"
+                />
+              </BlurFade>
+            </div>
           </div>
         </div>
       </section>
@@ -118,8 +183,9 @@ export default function Home() {
                   >
                     <div className="text-xs">
                       <Markdown>
-                        3rd-year Computer Science student at Bandung Institute
-                        of Technology. Focusing on Software System Engineering.
+                        Final-year Computer Science student at Bandung
+                        Institute of Technology. Focusing on Software System
+                        Engineering.
                       </Markdown>
                     </div>
                   </TiltedCard>
@@ -143,6 +209,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Work Experience */}
       <section id="work">
         <div className="mx-auto w-full max-w-2xl">
@@ -155,7 +222,11 @@ export default function Home() {
                 key={item.company + index}
                 delay={BLUR_FADE_DELAY * 6 + index * 0.05}
               >
-                <WorkCard {...item} isLast={index === WORK.length - 1} />
+                <WorkCard
+                  {...item}
+                  isLast={index === WORK.length - 1}
+                  titleIsRole
+                />
               </BlurFade>
             ))}
           </div>

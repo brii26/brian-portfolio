@@ -71,11 +71,8 @@ const SKILL_GROUPS: { label: string; items: Skill[] }[] = [
     ],
   },
   {
-    label: 'Tools',
-    items: [
-      { name: 'Git', slug: 'git' },
-      { name: 'Linux', slug: 'linux' },
-    ],
+    label: 'Automation & AI Agents',
+    items: [{ name: 'n8n', slug: 'n8n' }],
   },
 ]
 
