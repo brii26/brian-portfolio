@@ -42,12 +42,17 @@ export default function ContactSection() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
               Get in Touch
             </h2>
-            <p className="mx-auto max-w-md text-muted-foreground text-balance">
-              {/* I&apos;m currently seeking an internship opportunity. Feel free to
-              reach out on any platform, I&apos;ll get back to you whenever I
-              can. */}
-              Feel free to reach out on any platform, I&apos;ll get back to you
-              whenever I can.
+            <p className="mx-auto max-w-md text-muted-foreground text-justify">
+              Open for internship opportunities in{' '}
+              <span className="font-bold underline underline-offset-2">
+                Q1-Q2 2027
+              </span>
+              , and full-time opportunities from{' '}
+              <span className="font-bold underline underline-offset-2">
+                July 2027
+              </span>{' '}
+              onward. Feel free to reach out on any platform, I&apos;ll get
+              back to you whenever I can.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
               {CONTACTS.map((c) => (
