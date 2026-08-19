@@ -26,22 +26,6 @@ const WORK = [
     bullets: ['Incoming, starting October 2026.'],
   },
   {
-    company: 'MrScraper',
-    href: 'https://mrscraper.com',
-    role: 'AI Automation Engineer',
-    start: 'Aug 2026',
-    end: 'Present',
-    logoUrl: '/work/mrscraper.png',
-    active: true,
-    bullets: [
-      'Engineering an AI-powered Hospitality Competitive Intelligence workflow template using MrScraper and n8n.',
-    ],
-    tech: [
-      { name: 'n8n', slug: 'n8n' },
-      { name: 'Docker', slug: 'docker' },
-    ],
-  },
-  {
     company: 'BFI Finance',
     href: 'https://www.bfi.co.id',
     role: 'Software Engineer Intern',
@@ -148,17 +132,6 @@ export default function Home() {
                   logoUrl="/work/bfi.png"
                   label="Software Engineer Intern"
                   sublabel="BFI Finance"
-                />
-              </BlurFade>
-              <BlurFade
-                delay={BLUR_FADE_DELAY * 3 + 0.3}
-                yOffset={0}
-                className="flex"
-              >
-                <ActivityChip
-                  logoUrl="/work/mrscraper.png"
-                  label="AI Automation Engineer"
-                  sublabel="MrScraper"
                 />
               </BlurFade>
             </div>
