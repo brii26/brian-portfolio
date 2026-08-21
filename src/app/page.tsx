@@ -73,42 +73,42 @@ export default function Home() {
     <main className="min-h-dvh flex flex-col gap-14 relative">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between items-center">
-            <div className="gap-2 flex flex-col order-2 md:order-1">
+          <div className="gap-2 flex flex-col">
+            <BlurFadeText
+              delay={BLUR_FADE_DELAY}
+              className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
+              yOffset={8}
+              text={`Hi, I'm Brian`}
+            />
+            <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between items-center">
               <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
-                yOffset={8}
-                text={`Hi, I'm Brian`}
-              />
-              <BlurFadeText
-                className="text-muted-foreground max-w-150 md:text-lg lg:text-xl"
+                className="text-muted-foreground max-w-150 text-[15px] md:text-[17px] lg:text-[19px]"
                 delay={BLUR_FADE_DELAY}
                 text="Software Engineer with full-stack internship experience engineering solutions for financial institutions, passionate about backend engineering, system design, and distributed systems."
               >
                 Software Engineer with{' '}
-                <span className="font-bold underline underline-offset-2">
-                  full-stack internship
+                <span className="font-bold underline underline-offset-2 text-white">
+                  full-stack internship experience
                 </span>{' '}
-                experience engineering solutions for{' '}
-                <span className="font-bold underline underline-offset-2">
+                engineering solutions for{' '}
+                <span className="font-bold underline underline-offset-2 text-white">
                   financial institutions
                 </span>
                 , passionate about backend engineering, system design, and
                 distributed systems.
               </BlurFadeText>
+              {/* Profile Picture */}
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
+                  <AvatarImage
+                    alt={'My Photo'}
+                    src={'/profile/me.png'}
+                    className="object-cover"
+                  />
+                  <AvatarFallback>Foto</AvatarFallback>
+                </Avatar>
+              </BlurFade>
             </div>
-            {/* Profile Picture */}
-            <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
-              <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
-                <AvatarImage
-                  alt={'My Photo'}
-                  src={'/profile/me.png'}
-                  className="object-cover"
-                />
-                <AvatarFallback>Foto</AvatarFallback>
-              </Avatar>
-            </BlurFade>
           </div>
           <div className="order-3 -mt-[21px]">
             <div className="flex flex-wrap gap-2">
