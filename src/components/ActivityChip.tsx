@@ -34,7 +34,7 @@ export default function ActivityChip({
         )}
         <span className="text-xs font-medium whitespace-nowrap">{label}</span>
       </div>
-      <div className="pointer-events-none absolute left-1/2 bottom-full mb-2 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-popover px-2 py-1 text-xs text-muted-foreground opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100">
+      <div className="pointer-events-none absolute left-1/2 bottom-full mb-2 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-popover px-2 py-1 text-xs text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100">
         {sublabel}
       </div>
     </div>
