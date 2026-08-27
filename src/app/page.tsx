@@ -87,11 +87,11 @@ export default function Home() {
                 text="Software Engineer with full-stack internship experience engineering solutions for financial institutions, passionate about backend engineering, system design, and distributed systems."
               >
                 Software Engineer with{' '}
-                <span className="font-bold underline underline-offset-2 text-white">
+                <span className="font-bold underline underline-offset-2 text-foreground">
                   full-stack internship experience
                 </span>{' '}
                 engineering solutions for{' '}
-                <span className="font-bold underline underline-offset-2 text-white">
+                <span className="font-bold underline underline-offset-2 text-foreground">
                   financial institutions
                 </span>
                 , passionate about backend engineering, system design, and
