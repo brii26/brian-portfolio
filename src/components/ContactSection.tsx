@@ -43,11 +43,7 @@ export default function ContactSection() {
               Get in Touch
             </h2>
             <p className="mx-auto max-w-md text-muted-foreground text-justify">
-              Open for internship opportunities in{' '}
-              <span className="font-bold underline underline-offset-2">
-                Q1-Q2 2027
-              </span>
-              , and full-time opportunities from{' '}
+              Open for full-time opportunities from{' '}
               <span className="font-bold underline underline-offset-2">
                 July 2027
               </span>{' '}
