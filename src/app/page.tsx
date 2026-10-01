@@ -35,6 +35,7 @@ const WORK = [
     active: true,
     bullets: [
       'Engineered a document template engine that automated data population across 65+ document templates, simplifying document generation for client archival and printing workflows.',
+      'Built a document template engine with React (TypeScript), Spring Boot (Java), and PostgreSQL, generating print-ready layouts for 65+ templates used by 200+ branch offices across Indonesia.',
     ],
     tech: [
       { name: 'Java', slug: 'java' },
