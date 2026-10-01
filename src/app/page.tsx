@@ -34,7 +34,6 @@ const WORK = [
     logoUrl: '/work/bfi.png',
     active: true,
     bullets: [
-      'Engineered a document template engine that automated data population across 65+ document templates, simplifying document generation for client archival and printing workflows.',
       'Built a document template engine with React (TypeScript), Spring Boot (Java), and PostgreSQL, generating print-ready layouts for 65+ templates used by 200+ branch offices across Indonesia.',
     ],
     tech: [
@@ -45,18 +44,6 @@ const WORK = [
       { name: 'PostgreSQL', slug: 'postgresql' },
     ],
   },
-  {
-    company: 'Bandung Institute of Technology',
-    href: 'https://itb.ac.id/about-itb',
-    role: 'Computational Thinking Lab Assistant',
-    start: 'Oct 2024',
-    end: 'Dec 2024',
-    logoUrl: '/education/itb.png',
-    bullets: [
-      'Supervised bi-weekly Python programming labs for 60+ students across 3 problem sets, evaluating submissions and providing feedback on algorithmic correctness, code efficiency, and programming best practices.',
-    ],
-    tech: [{ name: 'Python', slug: 'python' }],
-  },
 ]
 
 const EDUCATION = [
@@ -66,6 +53,12 @@ const EDUCATION = [
     start: 'Aug 2023',
     end: 'Present',
     logoUrl: '/education/itb.png',
+    bullets: [
+      '3x Lab Assistant, Computational Thinking',
+      'Finance Staff at Inkubator IT',
+      'Secretary & Treasurer at Amateur Radio Club',
+      'Part of Google Developer Student Clubs (Software Engineering Path)',
+    ],
   },
 ]
 
