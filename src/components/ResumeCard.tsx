@@ -9,6 +9,7 @@ interface ResumeCardProps {
   role: string
   start: string
   end?: string
+  bullets?: string[]
   isLast?: boolean
 }
 
@@ -18,6 +19,7 @@ export default function ResumeCard({
   role,
   start,
   end,
+  bullets,
   isLast,
 }: ResumeCardProps) {
   const [imgError, setImgError] = useState(false)
@@ -39,30 +41,40 @@ export default function ResumeCard({
       </div>
 
       {/* card content */}
-      <div
-        className={`flex items-center gap-x-3 justify-between flex-1 min-w-0 ${!isLast ? 'pb-6' : ''}`}
-      >
-        <div className="flex items-center gap-x-3 flex-1 min-w-0">
-          {logoUrl && !imgError ? (
-            <Image
-              src={logoUrl}
-              alt={company}
-              width={48}
-              height={48}
-              className="size-10 md:size-12 border-0 rounded-[30%] shadow overflow-hidden object-contain bg-white flex-none p-px"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <div className="size-10 md:size-12 border border-border rounded-[30%] shadow bg-muted flex-none" />
-          )}
-          <div className="flex-1 min-w-0 flex flex-col gap-0.5">
-            <div className="font-semibold leading-none">{company}</div>
-            <div className="text-sm text-muted-foreground">{role}</div>
+      <div className={`flex-1 min-w-0 ${!isLast ? 'pb-6' : 'pb-2'}`}>
+        <div className="flex items-center gap-x-3 justify-between w-full">
+          <div className="flex items-center gap-x-3 flex-1 min-w-0">
+            {logoUrl && !imgError ? (
+              <Image
+                src={logoUrl}
+                alt={company}
+                width={48}
+                height={48}
+                className="size-10 md:size-12 border-0 rounded-[30%] shadow overflow-hidden object-contain bg-white flex-none p-px"
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="size-10 md:size-12 border border-border rounded-[30%] shadow bg-muted flex-none" />
+            )}
+            <div className="flex-1 min-w-0 flex flex-col gap-0.5">
+              <div className="font-semibold leading-none">{company}</div>
+              <div className="text-sm text-muted-foreground">{role}</div>
+            </div>
+          </div>
+          <div className="text-xs tabular-nums text-muted-foreground text-right flex-none">
+            {start} - {end ?? 'Present'}
           </div>
         </div>
-        <div className="text-xs tabular-nums text-muted-foreground text-right flex-none">
-          {start} - {end ?? 'Present'}
-        </div>
+        {bullets && bullets.length > 0 && (
+          <ul className="flex flex-col ml-[calc(3rem+0.75rem)] mt-0.5 pb-2 max-w-[75%]">
+            {bullets.map((b, i) => (
+              <li key={i} className="flex gap-1 text-xs text-muted-foreground">
+                <span>-</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   )
