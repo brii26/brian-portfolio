@@ -19,20 +19,22 @@ const WORK = [
     href: 'https://sekuritas.miraeasset.co.id/who-we-are',
     role: 'Backend Engineer Intern',
     start: 'Oct 2026',
-    end: 'Jan 2027',
-    dateOverride: 'Starting Oct 2026',
+    end: 'Present',
     logoUrl: '/work/mirae.png',
-    incoming: true,
-    bullets: ['Incoming, starting October 2026.'],
+    active: true,
+    bullets: ['Financial investment firm'],
+    tech: [
+      { name: 'Rust', slug: 'rust' },
+      { name: 'Go', slug: 'go' },
+    ],
   },
   {
     company: 'BFI Finance',
     href: 'https://www.bfi.co.id',
     role: 'Software Engineer Intern',
     start: 'Jul 2026',
-    end: 'Present',
+    end: 'Sep 2026',
     logoUrl: '/work/bfi.png',
-    active: true,
     bullets: [
       'Built a document template engine with React (TypeScript), Spring Boot (Java), and PostgreSQL, generating print-ready layouts for 65+ templates used by 200+ branch offices across Indonesia.',
     ],
@@ -123,9 +125,9 @@ export default function Home() {
                 className="flex"
               >
                 <ActivityChip
-                  logoUrl="/work/bfi.png"
-                  label="Software Engineer Intern"
-                  sublabel="BFI Finance"
+                  logoUrl="/work/mirae.png"
+                  label="Backend Engineer Intern"
+                  sublabel="Mirae Asset Sekuritas"
                 />
               </BlurFade>
             </div>
