@@ -22,7 +22,7 @@ const WORK = [
     end: 'Present',
     logoUrl: '/work/mirae.png',
     active: true,
-    bullets: ['Financial investment firm'],
+    bullets: ['Working with OHLCV'],
     tech: [
       { name: 'Rust', slug: 'rust' },
       { name: 'Go', slug: 'go' },
@@ -80,18 +80,18 @@ export default function Home() {
               <BlurFadeText
                 className="text-muted-foreground max-w-150 text-[15px] md:text-[17px] lg:text-[19px]"
                 delay={BLUR_FADE_DELAY}
-                text="Software Engineer with full-stack internship experience engineering solutions for financial institutions, passionate about backend engineering, system design, and distributed systems."
+                text="Software Engineer with experience in building product features for financial institutions, focusing on backend engineering and distributed systems."
               >
-                Software Engineer with{' '}
+                Software Engineer with experience in building product features
+                for financial institutions, focusing on{' '}
                 <span className="font-bold underline underline-offset-2 text-foreground">
-                  full-stack internship experience
+                  backend engineering
                 </span>{' '}
-                engineering solutions for{' '}
+                and{' '}
                 <span className="font-bold underline underline-offset-2 text-foreground">
-                  financial institutions
+                  distributed systems
                 </span>
-                , passionate about backend engineering, system design, and
-                distributed systems.
+                .
               </BlurFadeText>
               {/* Profile Picture */}
               <BlurFade delay={BLUR_FADE_DELAY}>
@@ -153,21 +153,21 @@ export default function Home() {
                     <div className="text-xs">
                       <Markdown>
                         Final-year Computer Science student at Bandung
-                        Institute of Technology. Focusing on Software System
+                        Institute of Technology. Focusing on Software
                         Engineering.
                       </Markdown>
                     </div>
                   </TiltedCard>
                   <TiltedCard
                     className="w-full h-full"
-                    title="Software & System Design"
+                    title="Software Engineer"
                     glowColor="bg-black dark:bg-white"
                   >
                     <div className="text-xs">
                       <Markdown>
-                        Focused on backend development and system design.
-                        Interested in how systems are designed to be resilient,
-                        maintainable, and scalable in production.
+                        Focused on backend engineering and distributed systems.
+                        Interested in how software systems are designed to
+                        align with product demand.
                       </Markdown>
                     </div>
                   </TiltedCard>
