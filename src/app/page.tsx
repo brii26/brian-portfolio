@@ -26,6 +26,7 @@ const WORK = [
     tech: [
       { name: 'Rust', slug: 'rust' },
       { name: 'Go', slug: 'go' },
+      { name: 'Redis', slug: 'redis' },
     ],
   },
   {
