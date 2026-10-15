@@ -22,7 +22,7 @@ const WORK = [
     end: 'Present',
     logoUrl: '/work/mirae.png',
     active: true,
-    bullets: ['Working with OHLCV'],
+    bullets: ['Working with charts'],
     tech: [
       { name: 'Rust', slug: 'rust' },
       { name: 'Go', slug: 'go' },
